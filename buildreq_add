@@ -1,0 +1,11 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+intltool
+glib-dev
+openldap-dev
+gtk3-dev
+nspr-dev
+nss-dev
+psmisc
+itstool
+perl(XML::Parser)
