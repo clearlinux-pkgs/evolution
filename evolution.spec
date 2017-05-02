@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.24.1
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/evolution/3.24/evolution-3.24.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.24/evolution-3.24.1.tar.xz
 Summary  : libraries needed for Evolution shell components
