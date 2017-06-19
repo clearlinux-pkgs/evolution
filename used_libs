@@ -31,6 +31,7 @@ libical.so.2
 libicalvcal.so.2
 libldap-2.4.so.2
 libm.so.6
+libnotify.so.4
 libnspr4.so
 libnss3.so
 libpango-1.0.so.0
