@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.26.0
-Release  : 7
+Release  : 8
 URL      : https://download.gnome.org/sources/evolution/3.26/evolution-3.26.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.26/evolution-3.26.0.tar.xz
 Summary  : libraries needed for Evolution shell components
@@ -16,6 +16,7 @@ Requires: evolution-lib
 Requires: evolution-data
 Requires: evolution-doc
 Requires: evolution-locales
+Requires: webkitgtk
 BuildRequires : cmake
 BuildRequires : glib-dev
 BuildRequires : gtk3-dev
@@ -134,7 +135,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505139021
+export SOURCE_DATE_EPOCH=1505167260
 mkdir clr-build
 pushd clr-build
 cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS:BOOL=ON -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DCMAKE_AR=/usr/bin/gcc-ar -DLIB_SUFFIX=64 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_RANLIB=/usr/bin/gcc-ranlib -DWITH_NSPR_INCLUDES=/usr/include/  -DENABLE_YTNEF=OFF  -DENABLE_TEXT_HIGHLIGHT=OFF  -DENABLE_PST_IMPORT=OFF  -DWITH_NSS_INCLUDES=/usr/include/
@@ -142,7 +143,7 @@ make VERBOSE=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1505139021
+export SOURCE_DATE_EPOCH=1505167260
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
