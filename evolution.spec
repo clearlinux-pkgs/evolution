@@ -4,14 +4,13 @@
 #
 Name     : evolution
 Version  : 3.26.0
-Release  : 9
+Release  : 10
 URL      : https://download.gnome.org/sources/evolution/3.26/evolution-3.26.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.26/evolution-3.26.0.tar.xz
 Summary  : libraries needed for Evolution shell components
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
 Requires: evolution-bin
-Requires: evolution-config
 Requires: evolution-lib
 Requires: evolution-data
 Requires: evolution-doc
@@ -57,6 +56,7 @@ BuildRequires : pkgconfig(shared-mime-info)
 BuildRequires : pkgconfig(webkit2gtk-4.0)
 BuildRequires : psmisc
 Patch1: build.patch
+Patch2: 0001-install-autostart-in-usr-share-rather-than-usr-etc.patch
 
 %description
 Evolution is the integrated mail, calendar and address book suite from
@@ -66,18 +66,9 @@ the Evolution Team.
 Summary: bin components for the evolution package.
 Group: Binaries
 Requires: evolution-data
-Requires: evolution-config
 
 %description bin
 bin components for the evolution package.
-
-
-%package config
-Summary: config components for the evolution package.
-Group: Default
-
-%description config
-config components for the evolution package.
 
 
 %package data
@@ -112,7 +103,6 @@ doc components for the evolution package.
 Summary: lib components for the evolution package.
 Group: Libraries
 Requires: evolution-data
-Requires: evolution-config
 
 %description lib
 lib components for the evolution package.
@@ -129,13 +119,14 @@ locales components for the evolution package.
 %prep
 %setup -q -n evolution-3.26.0
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505167260
+export SOURCE_DATE_EPOCH=1505920923
 mkdir clr-build
 pushd clr-build
 cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS:BOOL=ON -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DCMAKE_AR=/usr/bin/gcc-ar -DLIB_SUFFIX=64 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_RANLIB=/usr/bin/gcc-ranlib -DWITH_NSPR_INCLUDES=/usr/include/  -DENABLE_YTNEF=OFF  -DENABLE_TEXT_HIGHLIGHT=OFF  -DENABLE_PST_IMPORT=OFF  -DWITH_NSS_INCLUDES=/usr/include/
@@ -143,7 +134,7 @@ make VERBOSE=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1505167260
+export SOURCE_DATE_EPOCH=1505920923
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
@@ -172,10 +163,6 @@ popd
 /usr/libexec/evolution/evolution-alarm-notify
 /usr/libexec/evolution/evolution-backup
 /usr/libexec/evolution/killev
-
-%files config
-%defattr(-,root,root,-)
-%config /usr/etc/xdg/autostart/evolution-alarm-notify.desktop
 
 %files data
 %defattr(-,root,root,-)
@@ -512,6 +499,7 @@ popd
 /usr/share/icons/hicolor/48x48/apps/evolution-tasks.png
 /usr/share/icons/hicolor/48x48/apps/evolution.png
 /usr/share/icons/hicolor/symbolic/apps/evolution-symbolic.svg
+/usr/share/xdg/autostart/evolution-alarm-notify.desktop
 
 %files dev
 %defattr(-,root,root,-)
