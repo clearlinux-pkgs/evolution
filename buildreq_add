@@ -9,3 +9,4 @@ nss-dev
 psmisc
 itstool
 perl(XML::Parser)
+libgdata-dev
