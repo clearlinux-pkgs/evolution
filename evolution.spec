@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.28.0
-Release  : 19
+Release  : 20
 URL      : https://download.gnome.org/sources/evolution/3.28/evolution-3.28.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.28/evolution-3.28.0.tar.xz
 Summary  : libraries needed for Evolution shell components
