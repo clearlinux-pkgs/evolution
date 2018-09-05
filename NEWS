@@ -1,105 +1,246 @@
-Evolution 3.28.5 2018-07-30
+Evolution 3.30.0 2018-09-03
 ---------------------------
-
-Bug Fixes:
-	I#71 - Workaround cursor movement through unbreakable anchor bug (Milan Crha)
-	I#75 - "Empty Junk" does not work on a real Junk folder (Milan Crha)
-	I#78 - Search scope in Mail view not restored properly (Milan Crha)
-	I#57 - Edited event time keeps the old instance in the UI (Milan Crha)
 
 Miscellaneous:
-	[Mail-Notification] Remove unused code (reported by David Binderman) (Milan Crha)
-	Highlight of the search bar entry doesn't work (Milan Crha)
+	Help: Cover required 'Less secure apps' for Gmail POP (Andre Klapper)
+	Help: Cover GOA and 'Less secure apps' for Gmail IMAP (Andre Klapper)
+	Help: Add same info about GOA accounts as in 82692a82e5 (Andre Klapper)
+	Spanish help translation: Fix broken markup (Andre Klapper)
 
-Evolution 3.28.4 2018-07-16
+Translations:
+	Changwoo Ryu (ko)
+	Fran Dieguez (gl)
+	Mario Blättermann (de)
+	Alan Mortensen (da)
+	Jiri Grönroos (fi)
+	Anders Jonsson (sv)
+
+Evolution 3.29.92 2018-08-27
+----------------------------
+
+Bug Fixes:
+	I#83 - Follow Up "is not Completed" search condition does not work (Milan Crha)
+	I#82 - Text selection with signature not used in Reply (Milan Crha)
+	I#47 - Unset calendar filters which force the List View on view change (Milan Crha)
+
+Miscellaneous:
+	Correct build when nss/nspr do not provide pkg-config files (Milan Crha)
+	Crash under config_lookup_thread() at e-config-lookup.c:179 (Milan Crha)
+	[EMailRequest] mail:// URI can be without additional arguments (Milan Crha)
+	Help: Link to Evolution project on GNOME Gitlab instead of frontpage (Andre Klapper)
+
+Translations:
+	Yi-Jyun Pan (zh_TW)
+	Aurimas Černius (lt)
+	Fabio Tomat (fur)
+	Jiri Grönroos (fi)
+	Efstathios Iosifidis (el)
+	Bruce Cowan (en_GB)
+	Daniel Șerbănescu (ro)
+	Baurzhan Muftakhidinov (kk)
+	Cheng-Chia Tseng (zh_TW)
+	Claude Paroz (fr)
+	Kukuh Syafaat (id)
+	Emin Tufan Çetin (tr)
+	Rafael Fontenelle (pt_BR)
+	Tim Sabsch (de)
+	Christian Kirbach (de)
+
+Evolution 3.29.91 2018-08-13
+----------------------------
+
+Miscellaneous:
+	docs: Use http for w3.org URLs so gettext parsing itstool tags doesn't choke (Andre Klapper)
+	Add a translator comment to "Archive" (Andre Klapper)
+	Replace Bugzilla by Gitlab in user-visible error messages (Andre Klapper)
+	Use the fancy Unicode apostrophes in new strings (Piotr Drąg)
+
+Translations:
+	Daniel Mustieles (es)
+	Aurimas Černius (lt)
+	Fabio Tomat (fur)
+	Matej Urbančič (sl)
+	Mario Blättermann (de)
+	Alexandre Franke (fr)
+	Yuras Shumovich (be)
+	Piotr Drąg (pl)
+	Chao-Hsiung Liao (zh_TW)
+	Yi-Jyun Pan (zh_TW)
+
+Evolution 3.29.90 2018-07-30
+----------------------------
+
+Bug Fixes:
+	Bug 787344 - Mail Notification account selection (Milan Crha)
+	Bug 788370 - Rename address book WebDAV backend to CardDAV (Milan Crha)
+	Bug 269852 - Label should be on "Message" menu when mail is selected (Milan Crha)
+	Bug 241477 - Message color cannot be removed once applied to a message (Milan Crha)
+	Bug 240905 - Can't edit Follow Up flag (Milan Crha)
+	Bug 227703 - Add option to Hide cancelled tasks (Milan Crha)
+	I#75 - "Empty Junk" does not work on a real Junk folder (Milan Crha)
+	I#71 - Workaround cursor movement through unbreakable anchor bug (Milan Crha)
+	I#78 - Search scope in Mail view not restored properly (Milan Crha)
+	I#57 - Edited event time keeps the old instance in the UI (Milan Crha)
+	I#46 - Old plain text signature not updated before editing (Milan Crha)
+	I#80 - p7s attachements are not shown in mail preview (Milan Crha)
+
+Miscellaneous:
+	[mail-notification] Correct a recently added translatable string (Milan Crha)
+	Highlight of the search bar entry doesn't work (Milan Crha)
+	Fix two possible memory leaks related to message composer (Milan Crha)
+	Update some of the editor unit tests to not fail (Milan Crha)
+	Propagate trust prompt response within collection sources (Milan Crha)
+	Unnecessary message parse when viewing message source (Milan Crha)
+	Print of message source doesn't print message source (Milan Crha)
+	Help: Remove comment about Buteo (those links are dead) (Andre Klapper)
+	Help: Use https URL for syncevolution link (Andre Klapper)
+	Help: Use https URL for IETF RFC links (Andre Klapper)
+	Help: Replace GNOME Bugzilla by GNOME Gitlab link to report bugs (Andre Klapper)
+	Help: Use https URL for GNOME FTP link (Andre Klapper)
+	Help: Use https URL for freedesktop.org spec (Andre Klapper)
+	Help: Cover mail label item added to main menu in bug 269852 (Andre Klapper)
+	Help: add a TODO item (Andre Klapper)
+
+Translations:
+	Daniel Șerbănescu (ro)
+	Fabio Tomat (fur)
+	Wolfgang Stöggl (de)
+	Jordi Mas i Hernandez (ca)
+	Aurimas Černius (lt)
+	Daniel Mustieles (es)
+
+Evolution 3.29.4 2018-07-16
 ---------------------------
 
 Bug Fixes:
-	Bug 796174 - strcat() considered unsafe for buffer overflow (Milan Crha)
+	Bug 704246 - Cannot send encrypted mail to contact with certificate (Milan Crha)
 	Bug 757504 - [Composer] Do not wrap URLs in Plain Text mode (Milan Crha)
 	Bug 548681 - [MessageList] Restore of cursor mispositioned after delete (Milan Crha)
 	Bug 750636 - [Composer] Wrapped line should not start with a space (Milan Crha)
-	I#31 - help: German translation: Fix typo in closing tag (Antoine Jacoutot)
+	Bug 770141 - Help: Remove Quick Reference PDF (Andre Klapper)
+	Bug 723590 - Help: Cover accounts configured in GOA (Andre Klapper)
+	Bug 794085 - Help: Cover why 'Email reminder' option is greyed out (Andre Klapper)
+	Bug 786747 - Help: Add calendar views to list of keyboard shortcut (Andre Klapper)
+	I#25 - Show also URL in collection CalDAV Properties dialogs (Milan Crha)
+	I#31 - Help: German translation: Fix typo in closing tag (Antoine Jacoutot)
 	I#32 - Add column to sort at the end when Ctrl+Click its header (Milan Crha)
-	eds-I#13 - [IMAPx] Fails to append message to Yahoo! with no CRLF at the end (Milan Crha)
+	I#37 - Color support for iCalendar entries (Milan Crha)
 	I#43 - Tasks not shown when Side Panel is hidden (Milan Crha)
+	I#44 - Use Thunderbird's autoconfig ISPDB directly, not its copy (Milan Crha)
+	I#67 - Provide a hint how to show hidden Menu Bar again (Milan Crha)
+	I#39 - Extend Mail autoconfig to check in server's autoconfiguration too (Milan Crha)
 	I#55 - "Custom sort" dialog freezes Evolution and hogs the CPU under Wayland (Milan Crha)
+	I#53 - Address Helgrind warning about lock acquire order (Milan Crha)
 	I#69 - [MessageList] Regeneration loses selection start (Milan Crha)
+	eds-I#13 - [IMAPx] Fails to append message to Yahoo! with no CRLF at the end (Milan Crha)
+	eds-I#3 - [GPG] Mails that are not encrypted look encrypted (Milan Crha)
 
 Miscellaneous:
+	Show more options in CalDAV Properties for collection sources (Milan Crha)
+	Make it possible to disable text-highlight module with a GSettings option (Milan Crha)
 	Update links to GNOME git repositories in flatpak files (Milan Crha)
 	[EContactEditor] Do not store empty values in vCard (Milan Crha)
 	Correct memory leak of object returned by atk_object_ref_relation_set() (Milan Crha)
 	Try also with the From address when looking up correct From account for composer (Milan Crha)
 	Properly wrap text in 'Security Information' dialog (Milan Crha)
 	Add 4px bottom margin to secure button table (Milan Crha)
+	[autoconfig] Rename look up on GNOME server, because it's not true anymore (I#44) (Milan Crha)
 	[Composer] Message generated twice when using 'Send through Outbox' (Milan Crha)
+	Fix few memory leaks, mostly around gtk_..._new_with_model() (Milan Crha)
 	Update couple HTML editor tests (Milan Crha)
+	Help: Fix grammar in a sentence (Anders Jonsson)
 	Help: Update meeting invitation process due to UI changes (Дилян Палаузов)
+	Help: Fix a typo (Andre Klapper)
+	Help: Cover email aliases from bug 605416 (Andre Klapper)
+	Help: Better explain syncing remote accounts vs individual folders for offline usage (Andre Klapper)
+	Help: Fix my markup in previous commit (Andre Klapper)
+	Help: Add less complicated way to get menu bar displayed again (Andre Klapper)
+	Help: Use same names for views as in the UI (Andre Klapper)
+	Help: Remove shortcuts from calendar views, now in intro-keyboard-shortcuts (Andre Klapper)
+	Help: Fix duplicate section IDs (Andre Klapper)
+	Help: Option is now called Custom, not Customize (Andre Klapper)
+	Help: Use stable if namespace instead of experimental (Andre Klapper)
+	Help: Use https URL for CC license link (Andre Klapper)
+	Help: Use https URL for w3.org links (Andre Klapper)
+	Help: Update URL from library.gnome.org to help.gnome.org for older content (Andre Klapper)
 
 Translations:
-	Pieter Schalk Schoeman (af)
-	Daniel Șerbănescu (ro)
+	Fabio Tomat (fur)
+	Daniel Mustieles (es)
 
-Evolution 3.28.3 2018-06-18
+Evolution 3.29.3 2018-06-18
 ---------------------------
 
 Bug Fixes:
-	Bug 795977 - AutoArchive archives Junk and Deleted messages too (Milan Crha)
-	Bug 796114 - [Collection Accounts] Preselect each unique collection kind, not only first (Milan Crha)
+	Bug 796155 - Allow changing per-folder archive settings when auto-archiving is disabled (Milan Crha)
 	Bug 796294 - No LTR text direction style in composed HTML messages (Milan Crha)
+	Bug 795870 - Add a way to initiate refresh of account sources (Milan Crha)
+	Bug 795869 - Synchronize color of WebDAV resources (Milan Crha)
 	Bug 776162 - "Ignore Thread" does not always ignore thread (Milan Crha)
+	Bug 796174 - strcat() considered unsafe for buffer overflow (Milan Crha)
+	I#9 - Mail notification tweaks (Ryan Hendrickson)
+	I#14 - Add 'in Current Folder and Subfolders' search option (Milan Crha)
+	I#20 - Hint authentication methods for LDAP address books (Milan Crha)
 	I#19 - Show "message/feedback-report" attachments inline (Milan Crha)
 
 Miscellaneous:
-	Address some of the clang warnings (Milan Crha)
-	Fix a 'variable hides parameter' warning (Milan Crha)
-	[alarm-notify] Do not use markup around organizer name in libnotify text (Milan Crha)
-	Address some of the compiler and static analyzers warnings (Milan Crha)
-	Crash when making links clickable in composer (Milan Crha)
-	Shift+Click on switcher button to open a new window (Milan Crha)
+	[mail-send-recv] Remove unused struct _send_info::keep_on_server property (Milan Crha)
+	Update bug URL and switch to https:// in the DOAP file (Milan Crha)
 	Fix a possible memory leak in mail_display_uri_requested_cb() (Milan Crha)
 	[composer-autosave] Use-after-free during snapshot save to file ][ (Milan Crha)
-	Update bug URL and switch to https:// in the DOAP file (Milan Crha)
 	Fix few memory leaks around camel_data_wrapper_get_mime_type() (Milan Crha)
+	Try to preselect source type when creating new source (Milan Crha)
+	Missing build dependency for gdbus-codegen on input .xml file (Milan Crha)
+	Compare only date when searching with Sent/Received dates (Milan Crha)
 	[ENameSelectorEntry] Plain text drag & drop between entries misbehaves (Milan Crha)
+	Use 'User-Agent' instead of 'X-Mailer' header when sending message (Milan Crha)
 	Mail Accounts in Preferences not always properly sorted (Milan Crha)
 	Drop dependency on libcryptui (Milan Crha)
 
 Translations:
-	Kukuh Syafaat (id)
-	Uladzimir Manulenka (be)
-	Christian Kirbach (de)
+	Daniel Mustieles (es)
+	Marek Cernocky (cs)
+	Cheng-Chia Tseng (zh_TW)
+	Mario Blättermann (de)
 
-Evolution 3.28.2 2018-05-07
+Evolution 3.29.2 2018-05-21
 ---------------------------
 
 Bug Fixes:
-	Bug 793583 - webkit_web_view_load_html() garbages linked CSS content (Milan Crha)
-	Bug 795106 - Compiler warnings about identical inner 'if' condition (Milan Crha)
-	Bug 795108 - Trailing bracket not stripped when linkifying URL inside angle brackets (Milan Crha)
 	Bug 795289 - Proxy settings ignored when checking for auth types (Milan Crha)
 	Bug 795331 - Use correct desktop-entry name in notifications (Mathieu Bridon)
+	Bug 795447 - Enigmail GPG encrypted Subject not shown in message list (Milan Crha)
+	Bug 795567 - Do not expand archive folder in Copy/Move message to folder dialog (Milan Crha)
+	Bug 795977 - AutoArchive archives Junk and Deleted messages too (Milan Crha)
+	Bug 796114 - [Collection Accounts] Preselect each unique collection kind, not only first (Milan Crha)
 
 Miscellaneous:
-	[EMailDisplay] Do not call reload when nothing is loaded (Milan Crha)
-	Revert message composer part of the previous commit (Milan Crha)
+	Move evolution-alarm-notify to evolution-data-server (Milan Crha)
+	Address some of the clang warnings (Milan Crha)
+	Address some of the compiler and static analyzers warnings (Milan Crha)
+	Crash when making links clickable in composer (Milan Crha)
+	Shift+Click on switcher button to open a new window (Milan Crha)
 
 Translations:
-	Stas Solovey (ru)
-	Matej Urbančič (sl)
-	Balázs Meskó (hu)
-	Muhammet Kara (tr)
-	Gábor Kelemen (hu)
+	Fabio Tomat (fur)
+	Yuras Shumovich (be)
+	Marek Černocký (cs)
+	Christian Kirbach (de)
 
-Evolution 3.28.1 2018-04-09
+Evolution 3.29.1 2018-04-16
 ---------------------------
 
 Bug Fixes:
 	Bug 794151 - The "File Under" field can not be edited (Milan Crha)
 	Bug 794138 - Search for Category Unmatched in Memos results in an error (Milan Crha)
-	Bug 793848 - Split PRE into separate paragraphs in HTML ][ (Milan Crha)
+	Bug 788193 - [itip-formatter] Describe used recurrence, if possible (Milan Crha)
+	Bug 793915 - Option to convert UTC time to local time in Reply credits (Milan Crha)
+	Bug 602612 - Add 'Alternative Reply' menu option (Milan Crha)
+	Bug 794204 - Links in mailto: body not detected when composing in HTML (Milan Crha)
+	Bug 200907 - Add support for recurring tasks (Milan Crha)
 	Bug 794474 - Headers in forwarded message credits in opposite order (HTML) (Milan Crha)
+	Bug 516943 - Disable direct event Summary edit by default (Milan Crha)
+	Bug 794465 - [Automatic Contacts] Option to File under as "First Last" (Milan Crha)
 	Bug 791244 - Cannot copy text/click links in read-only events (Milan Crha)
 	Bug 792688 - Failed mail print operation causes crash (Milan Crha)
 	Bug 794628 - Don't preload timezones on libical 3.0.2+ (Dan Nicholson)
@@ -107,32 +248,45 @@ Bug Fixes:
 	Bug 794693 - Crash when trying to view email message source (Milan Crha)
 	Bug 794648 - Undo/Redo doesn't work in component Description (Milan Crha)
 	Bug 794718 - Calendar List view shows wrong start/end time (when in UTC) (Milan Crha)
+	Bug 794832 - Option to close window on deletion, not open next mail (Milan Crha)
+	Bug 793583 - webkit_web_view_load_html() garbages linked CSS content (Milan Crha)
+	Bug 724647 - Add option to Show full mail addresses in message preview (Milan Crha)
+	Bug 795106 - Compiler warnings about identical inner 'if' condition (Milan Crha)
+	Bug 795108 - Trailing bracket not stripped when linkifying URL inside angle brackets (Milan Crha)
 	Bug 794451 - Fix my previous changes (Andre Klapper)
 
 Miscellaneous:
+	Show 8 days in the To Do bar (Milan Crha)
 	Correct typo in config.h.in (Milan Crha)
+	Make it possible to disable Reminders for Tasks (Milan Crha)
 	Correct e_mail_formatter_canon_header_name() (Milan Crha)
 	Correct evolution stable flatpak build (Milan Crha)
-	Update version requirements in flatpak files (Milan Crha)
+	Bump libical version to 3.0.3 in flatpak scripts (Milan Crha)
 	Avoid runtime warning when printing message with text/calendar attachment (Milan Crha)
 	Avoid runtime warning when creating fullname.ui	dialog (Milan Crha)
+	Set transient parent for the "Full Name" editor dialog (Milan Crha)
 	Reply includes HTML attachment in message body (Milan Crha)
 	Mark missing string for translation (Piotr Drąg)
 	Ensure transient parent for ETimezoneDialog (Milan Crha)
+	[EMailDisplay] Do not call reload when nothing is loaded (Milan Crha)
+	Revert message composer part of the previous commit (Milan Crha)
+	Make list of headers for message preview reorderable in Preferences (Milan Crha)
+	[EToDoPane] With completed hide also cancelled tasks (Milan Crha)
 	Fix broken markup in Hungarian translation (Andre Klapper)
 	Use proper its format for translator comments (Andre Klapper)
 	Update how to use address book as a data source in LibreOffice (Andre Klapper)
-	Remove step covering a non-existing UI element (Andre Klapper)
-	No globe button anymore, just a 'Select' button (Andre Klapper)
 	Classification UI in task/cal editor is not consistent anymore (Andre Klapper)
+	No globe button anymore, just a 'Select' button (Andre Klapper)
+	Remove step covering a non-existing UI element (Andre Klapper)
+	Reflect the 3.26 UI in the docs (Andre Klapper)
+	Cover how to set objects as privcate by default (Andre Klapper)
 
 Translations:
-	Efstathios Iosifidis (el)
-	Stas Solovey (ru)
 	Muhammet Kara (tr)
+	Daniel Mustieles (es)
+	Stas Solovey (ru)
 	Emin Tufan Çetin (tr)
 	Cheng-Chia Tseng (zh_TW)
-	Daniel Șerbănescu (ro)
 	Piotr Drąg (pl)
 	Anders Jonsson (sv)
 	Rafael Fontenelle (pt_BR)
@@ -141,8 +295,10 @@ Translations:
 	Christian Kirbach (de)
 	Rūdolfs Mazurs (lv)
 	Aurimas Černius (lt)
-	Daniel Șerbănescu (ro)
-	Hannie Dumoleyn (nl)
+	Matej Urbančič (sl)
+	Balázs Meskó (hu)
+	Jordi Mas (ca)
+	Gábor Kelemen (hu)
 
 Evolution 3.28.0 2018-03-12
 ---------------------------
