@@ -4,10 +4,10 @@
 #
 Name     : evolution
 Version  : 3.30.5
-Release  : 34
+Release  : 35
 URL      : https://download.gnome.org/sources/evolution/3.30/evolution-3.30.5.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.30/evolution-3.30.5.tar.xz
-Summary  : Manage your email, contacts and schedule
+Summary  : libraries needed for Evolution shell components
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
 Requires: evolution-bin = %{version}-%{release}
@@ -61,17 +61,11 @@ BuildRequires : pkgconfig(shared-mime-info)
 BuildRequires : pkgconfig(webkit2gtk-4.0)
 BuildRequires : psmisc
 Patch1: build.patch
+Patch2: CVE-2018-15587.patch
 
 %description
-Evolution is translated like most GNOME projects, by updating the
-.po files in evolution/po and by translating the help files in
-evolution/help/C and placing them in a locale specific dir, ie
-evolution/help/fr.  In addition, the default welcome message is in
-evolution/mail/default/C/Inbox and can be translated by translating the
-message in the file and also putting it in a locale specific dir, ie
-evolution/mail/default/fr/Inbox.  The file name 'Inbox' should not be
-changed, as this is an internally defined string (the name in the
-folder list will still be translated though).
+Evolution is the integrated mail, calendar and address book suite from
+the Evolution Team.
 
 %package bin
 Summary: bin components for the evolution package.
@@ -151,21 +145,26 @@ locales components for the evolution package.
 %prep
 %setup -q -n evolution-3.30.5
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549298873
+export SOURCE_DATE_EPOCH=1549917913
 mkdir -p clr-build
 pushd clr-build
+export CFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FCFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CXXFLAGS="$CXXFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
 %cmake .. -DWITH_NSPR_INCLUDES=/usr/include/  -DENABLE_YTNEF=OFF  -DENABLE_TEXT_HIGHLIGHT=OFF  -DENABLE_PST_IMPORT=OFF  -DWITH_NSS_INCLUDES=/usr/include/ -DWITH_NSS_INCLUDES=/usr/include/nss3
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1549298873
+export SOURCE_DATE_EPOCH=1549917913
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution/COPYING
