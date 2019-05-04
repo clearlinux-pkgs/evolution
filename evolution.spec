@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.32.1
-Release  : 37
+Release  : 38
 URL      : https://download.gnome.org/sources/evolution/3.32/evolution-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.32/evolution-3.32.1.tar.xz
 Summary  : Manage your email, contacts and schedule
@@ -168,19 +168,22 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554734423
+export SOURCE_DATE_EPOCH=1556996609
 mkdir -p clr-build
 pushd clr-build
-export CFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FCFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
-export CXXFLAGS="$CXXFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export FCFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export FFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export CXXFLAGS="$CXXFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
 %cmake .. -DWITH_NSPR_INCLUDES=/usr/include/  -DENABLE_YTNEF=OFF  -DENABLE_TEXT_HIGHLIGHT=OFF  -DENABLE_PST_IMPORT=OFF  -DWITH_NSS_INCLUDES=/usr/include/ -DWITH_NSS_INCLUDES=/usr/include/nss3
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1554734423
+export SOURCE_DATE_EPOCH=1556996609
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution/COPYING
