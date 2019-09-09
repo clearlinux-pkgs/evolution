@@ -5,9 +5,9 @@ libcairo.so.2
 libcamel-1.2.so.62
 libcanberra-gtk3.so.0
 libcanberra.so.0
-libebook-1.2.so.19
-libebook-contacts-1.2.so.2
-libecal-1.2.so.19
+libebook-1.2.so.20
+libebook-contacts-1.2.so.3
+libecal-2.0.so.1
 libedataserver-1.2.so.24
 libedataserverui-1.2.so.2
 libenchant.so.1
@@ -23,9 +23,10 @@ libgnome-autoar-0.so.0
 libgnome-autoar-gtk-0.so.0
 libgnome-desktop-3.so.17
 libgobject-2.0.so.0
+libgspell-1.so.2
 libgtk-3.so.0
-libgtkspell3-3.so.0
 libgweather-3.so.15
+libical-glib.so.3
 libical.so.3
 libicalvcal.so.3
 libldap-2.4.so.2

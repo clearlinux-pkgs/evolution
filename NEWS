@@ -1,87 +1,293 @@
-Evolution 3.32.4 2019-07-15
+Evolution 3.34.0 2019-09-09
+---------------------------
+
+Miscellaneous:
+	help: Fix broken markup in cs help translation (Andre Klapper)
+	help: Remove XInclude for Account settings' \"Identity\" section (Andre Klapper)
+	help: Cover server-side search behavior for remote accounts (Andre Klapper)
+	help: Remove unproven statement about search speed (Andre Klapper)
+
+Translations:
+	Fabio Tomat (fur)
+	Ask Hjorth Larsen (da)
+	Efstathios Iosifidis (el)
+	Gianvito Cavasoli (it)
+	Jiri Grönroos (fi)
+	Emin Tufan Çetin (tr)
+	Rafael Fontenelle (pt_BR)
+	Balázs Úr (hu)
+	Gábor Kelemen (hu)
+	Anders Jonsson (sv)
+
+Evolution 3.33.92 2019-09-02
+----------------------------
+
+Bug Fixes:
+	I#528 - Calendar's List View changes forgotten next run (Milan Crha)
+	I#551 - Enhance URL end recognition regarding closing bracket (Milan Crha)
+	I#562 - Mail message list sometimes doesn't scroll to cursor after regen (Milan Crha)
+	I#574 - Displays Tasks from just disabled Accounts (Milan Crha)
+	I#578 - ToDo bar: Multiday events shown incorrectly (Milan Crha)
+	I#583 - Sanitize \r\n\t in iCalendar component Summary (Milan Crha)
+	I#588 - Unneeded headers remain when filter forwards a message (Milan Crha)
+	I#592 - Typo in translatable string (Milan Crha)
+	I#593 - Display all phones in the contact preview (Milan Crha)
+	I#601 - Calendar: Force 24-hour format early after start (Milan Crha)
+
+Miscellaneous:
+	itip-formatter: Doesn't match attendee when an alias address is used (Milan Crha)
+	Flatpak: Hide Save All button in attachment bar (Milan Crha)
+	ECompEditor: Set window's urgency hint after error when not focused (Milan Crha)
+	Flatpak: Build also intltool (Milan Crha)
+
+Translations:
+	Kukuh Syafaat (id)
+	Daniel Mustieles (es)
+	Daniel Șerbănescu (ro)
+	Tim Sabsch (de)
+	Charles Monzat (fr)
+	Jordi Mas (ca)
+	Fran Dieguez (gl)
+	Anders Jonsson (sv)
+	Piotr Drąg (pl)
+	Changwoo Ryu (ko)
+	Aurimas Černius (lt)
+	Petr Kovář (cs)
+
+Evolution 3.33.91 2019-08-19
+----------------------------
+
+Bug Fixes:
+	I#518 - Handle different DTSTART/DTEND timezones properly (Milan Crha)
+	I#541 - Free form expression: Search within body is slow (Milan Crha)
+	I#554 - Hide calendar tooltips on switching the view (Milan Crha)
+	I#563 - Compare date with today using localtime(), instead of UTC (Milan Crha)
+	I#568 - Set GtkLabel's width-chars when using line-wrap (Milan Crha)
+	I#576 - Can't copy text from location field in read-only calendar (Milan Crha)
+	M!38 - WebDAV browser: Permit changing the displayname of any collection (Milan Crha)
+	M!41 - Ensure CSV imported vCard-s have FN property (Дилян Палаузов)
+	eds-I#138 - Notify clients when backend is refreshing its content (Milan Crha)
+
+Miscellaneous:
+	Include also CFLAGS in gtkdoc-scangobj command line (Milan Crha)
+	Fix few memory leaks in internal test programs (Milan Crha)
+	ECellTree: Limit deep threads indent up to 70% of the cell width (Milan Crha)
+	EDayView: Time zone name not always updated on time zone change in UI (Milan Crha)
+
+Translations:
+	Jordi Mas (ca)
+	Aurimas Černius (lt)
+	Asier Sarasua Garmendia (eu)
+	Bruce Cowan (en_GB)
+	Anders Jonsson (sv)
+	Daniel Șerbănescu (ro)
+
+Evolution 3.33.90 2019-08-05
+----------------------------
+
+Bug Fixes:
+	I#549 - Remove shortcut for "Copy all contacts to…" in Contacts view (Milan Crha)
+	I#564 - [Flatpak] The bwrap process keeps running after quit (Milan Crha)
+	M!34 - Show attendees on selecting “Assign Task” in the Tasks bar (Дилян Палаузов)
+	M!39 - ECell::draw: always display text in contrasting color (Дилян Палаузов)
+	M!40 - [ECompEditor] Switch between 'All Day Event/Task' with Control+Y (Дилян Палаузов)
+	eds-M!28 - Include LDFLAGS in gtkdoc-scangobj command line (Ting-Wei Lan)
+
+Miscellaneous:
+	[Flatpak] Make the .json files valid (Milan Crha)
+	[Flatpak] Change reference to bogofilter sources (Milan Crha)
+	Add refresh interval settings for CardDAV address books (Milan Crha)
+	killev: Search for killall/pkill in runtime, rather than in compile time (Milan Crha)
+	Use Unicode triple-dots in translatable strings (Milan Crha)
+	help: Replace an external redirect link by its direct link (Andre Klapper)
+	help: Fix xmlns for XInclude (must be http) so pages validate (Andre Klapper)
+	help: Cover formatting of received HTML mail, e.g. showing Plain Text (Andre Klapper)
+
+Translations:
+	Andika Triwidada (id)
+	Stas Solovey (ru)
+	Daniel Mustieles (es)
+	Asier Sarasua Garmendia (eu)
+	Kjartan Maraas (nb)
+	Jordi Mas (ca)
+
+Evolution 3.33.4 2019-07-15
 ---------------------------
 
 Bug Fixes:
 	Bug 755730 - Focus message list after start in the Mail view ][ (Milan Crha)
+	Bug 759493 - Provide keyboard shortcuts window (Milan Crha)
+	I#385 - Add "floating time" timezone option for events (Milan Crha)
 	I#479 - Call mail account refresh also after going online ][ (Milan Crha)
 	I#487 - Attachment dropdown menu rendered at the bottom of the screen (Milan Crha)
+	I#492 - [Calendar] Preserve the organizer/attendee SCHEDULE-STATUS parameter (Milan Crha)
+	I#494 - Format text/rfc822-headers as message headers (Milan Crha)
+	I#499 - Change generated Forward subject line to not contain brackets (Milan Crha)
 	I#501 - Use Ctrl+Shift+U shortcut for New Shared Memo (Milan Crha)
+	I#503 - Do not insert LANGUAGE for ATTENDEE-s (Milan Crha)
+	I#504 - Use Ctrl+Shift+I shortcut for New Assigned Task (Milan Crha)
+	I#506 - Add “Type” column in the “Calendar window” → “List view” (Milan Crha)
+	I#507 - Mobile Phone shown twice in the contact preview (Milan Crha)
+	I#508 - [ECompEditor] Consider selected timezone for Now time in date/time edit (Milan Crha)
 	I#517 - Use case insensitive email compare on account address guess (Milan Crha)
 	I#519 - Hides .p7m attachments (Milan Crha)
 	I#529 - [ECompEditor] Store multivalue properties as multiple properties (Milan Crha)
+	I#533 - Task table tooltip ignores the timezone of the DUE property (Milan Crha)
+	I#534 - Remove unneeded variable assignment in ece_event_fill_component() (Milan Crha)
+	M!20 - Use GtkPopover for an emoticon tool button (Olivier Fourdan)
+	M!21 - Use special icon for "Assigned Task" in the menu (Дилян Палаузов)
+	M!22 - Improve CSV file import (Дилян Палаузов)
+	M!23 - Prefer g_string_append_c() over g_string_append() (Дилян Палаузов)
+	M!24 - kmail-libs.c:kuri_to_euri: use the return value of g_string_free() (Дилян Палаузов)
+	M!25 - Utilize g_string_set_size() and g_string_assign() (Дилян Палаузов)
+	M!26 - evolution-csv-importer.c:getNextCSVEntry() memory leak (Дилян Палаузов)
+	M!27 - Ignore the value of some GString functions (Дилян Палаузов)
+	M!28 - e-contact-editor.c:file_as_get_style() avoid g_strdup+g_free call (Дилян Палаузов)
+	M!29 - evolution-csv-importer.c:parseLine: skip calls to strlen+g_strdup (Дилян Палаузов)
+	M!30 - Use the return value of g_string_free(*, FALSE) (Дилян Палаузов)
+	M!32 - e-table-header-item.c:ethi_start_drag: Fix a possible memory leak (Дилян Палаузов)
+	M!33 - Update usage of stock_task-assigned-to icon (Дилян Палаузов)
 
 Miscellaneous:
+	Use GtkPopover for EColorCombo widget (Milan Crha)
+	Do not unfold DKIM and ARC headers in message preview (Milan Crha)
 	Remember source message information when re-editing in Drafts or Outbox (Milan Crha)
+	[Flatpak] Build also pinentry, to be able to use gpg with password prompts (Milan Crha)
+	[ECalModel] Cache value for E_CAL_MODEL_FIELD_ICON (Milan Crha)
+	Inconsistent background color in ETable for Memos, Tasks and List View (Milan Crha)
+	Incorrect timezone selected in ETimezoneDialog (Milan Crha)
+	Remove useless runtime check in date_time_list_finalize() (Milan Crha)
+	Correct coding typo in e_day_view_on_editing_stopped() (Milan Crha)
+	Refer to 'Evolution Website' only as 'Website' in the About dialog (Milan Crha)
 	[ECompEditor] Ensure attendee changes stored before save (Milan Crha)
+	Check whether enum-based ICalParameter had been created before using it (Milan Crha)
 	Test whether referenced column exists when loading ETableState (Milan Crha)
+	Search for Bogofilter/SpamAssassin binaries during configure time (Milan Crha)
+	[addressbook] Claim what image size is expected when asking to resize given image (Milan Crha)
+	[Flatpak] Build also Bogofilter, to enable Junk filtering on the client (Milan Crha)
+	help: Update main window screenshot for 3.32 style (Andre Klapper)
 
-Evolution 3.32.3 2019-06-17
+Translations:
+	Fabio Tomat (fur)
+	Daniel Mustieles (es)
+	Matej Urbančič (sl)
+	Chao-Hsiung Liao (zh_TW)
+	Aurimas Černius (lt)
+	Asier Sarasua Garmendia (eu)
+	Jordi Mas (ca)
+
+Evolution 3.33.3 2019-06-17
 ---------------------------
 
 Bug Fixes:
-	I#400 - [To Do Bar] False runtime warning with 'Show Tasks without Due date' set (Milan Crha)
-	I#405 - Time zone change not properly propagated in the Month View (Milan Crha)
-	I#432 - Prefer Reply-To from To/Cc in Group Reply (Milan Crha)
+	Bug 233065 - Add "URL" field for appointments and memos (Milan Crha)
+	Bug 793795 - Use EUrlEntry in HTML editor's Link Properties dialog (Milan Crha)
+	I#399 - Allow Selection From Multiple User-Defined Reminder Times (Milan Crha)
+	I#408 - Make it possible to hide address book groups (Milan Crha)
 	I#433 - Change <div>/<p> styling in composer to better match preview panel (Milan Crha)
-	I#437 - [To Do Bar] Leftover task after DUE date change (Milan Crha)
-	I#439 - Calendar Month view weekday names unreadable in dark theme (Milan Crha)
 	I#445 - Don't show blockquote indicators on both sides for 6th+ level (Milan Crha)
 	I#446 - S/MIME signed message reported as encrypted in the "Security:" header (Milan Crha)
+	I#448 - Meeting Editor: Use toggle for the attendees' RSVP column (Milan Crha)
 	I#454 - [ECellCheckbox] Draw the check state using gtk+ theme (Milan Crha)
+	I#463 - Deselect category when it's deleted in the Category editor (Milan Crha)
+	I#468 - Update README to markdown (Addie GS)
 	I#472 - Merge Contact window shown empty in certain situations (Milan Crha)
 	I#474 - [ESource Editors] Invalid URL: field value reset on User: field change (Milan Crha)
+	I#475 - Show what the "Default" glib network manager is (Milan Crha)
+	I#476 - Hide "Server handles meeting invitations" for VJOURNAL/CalDAV (Milan Crha)
+	I#478 - Support STATUS for Events and Memos (Milan Crha)
 	I#479 - Call mail account refresh also after going online (Milan Crha)
 	I#481 - WebDAV browser: Popover widgets can be made insensitive by gtk+ (Milan Crha)
 	I#484 - Edit Memo's Start date in-table as DATE by default (Milan Crha)
-	M!13 - Improve icons in previews with hiDPI monitors (Milan Crha)
 	M!14 - Allow floating point value for webview body font size (Guillaume Castagnino)
-	M!16 - Add copyright and OASR content rating info into .appdata.xml file (Jiri Eischmann)
-	eds-I#112 - Credentials prompter re-asks for credentials of disabled accounts (Milan Crha)
+	M!17 - icon: update app icon (Jakub Steiner)
+	eds-I#120 - Fails to build with libasan using Clang (undefined symbols) (Milan Crha)
+	eds-I#121 - CalDAV-advertised subscribed WebCal is not imported (Milan Crha)
+	eds-M!15 - Fix typos in CMake modules (Дилян Палаузов)
+	eds-M!17 - Use Media Type from RFC 8551 for S/MIME creation (Milan Crha)
 
 Miscellaneous:
-	Fix a possible memory leak in e-web-view.c:web_view_initialize() (Milan Crha)
-	Reference a GDBusProxy object in the synchronous call wrappers (Milan Crha)
-	Fix a crash when filling mail threaded view (Milan Crha)
-	Change buffer size argument value in call of icalvalue_decode_ical_string() (Milan Crha)
+	Fix a crash in itip-view.c:extract_itip_data() (Milan Crha)
+	Fix clang warnings (mostly [-Wenum-conversion]) (Milan Crha)
+	Add all icon directories into icon theme search path in maintainer mode (Milan Crha)
+	Local calendar config option to open for writing does nothing (Milan Crha)
 	Change path where backup/restore searches for the .running file (Milan Crha)
 	Fix several memory leaks in the addressbook code (Milan Crha)
+	Memos cannot have set reminders according to RFC 5545 (Milan Crha)
+	[Flatpak] Update libical version to 3.0.5 for the 'master' manifest (Milan Crha)
+	Use ECalComponentAlarm members instead of ICalProperty objects (Milan Crha)
+	Add 'Status' column to Memos and Calendar's List View (Milan Crha)
 
 Translations:
 	Alexandre Franke (fr)
+	Balázs Úr (hu)
 	Rodrigo Lledó (es)
+	Fabio Tomat (fur)
+	Efstathios Iosifidis (el)
 
-Evolution 3.32.2 2019-05-06
+Evolution 3.33.2 2019-05-20
 ---------------------------
 
 Bug Fixes:
 	I#240 - Make SRV config lookup check also TXT records for CalDAV/CardDAV (Дилян Палаузов)
+	I#400 - [To Do Bar] False runtime warning with 'Show Tasks without Due date' set (Milan Crha)
+	I#405 - Time zone change not properly propagated in the Month View (Milan Crha)
+	I#406 - Use a special icon for a configured Archive folder (Milan Crha)
+	I#407 - Inconsistent folder icons between side bar and top grey bar (Milan Crha)
+	I#417 - Add support for CSS property "-MessageList-new-mail-fg-color" (Steven Bakker)
+	I#429 - Do not mark empty string for translation (Milan Crha)
 	I#430 - The first user's Search Folder not auto-shown in the folder tree (Milan Crha)
-	M!9 - Remove unused variable from e-srv-config-lookup.c:srv_config_lookup_domain_sync() (Дилян Палаузов)
+	I#432 - Prefer Reply-To from To/Cc in Group Reply (Milan Crha)
+	I#437 - [To Do Bar] Leftover task after DUE date change (Milan Crha)
+	I#439 - Calendar Month view weekday names unreadable in dark theme (Milan Crha)
 	M!10 - Remove unneeded g_srv_target_list_sort() call in srv_config_lookup_domain_sync() (Дилян Палаузов)
+	M!11 - shell: print equal sign after --component in --help text (Дилян Палаузов)
 	M!12 - [SRV config lookup] Do not write default ports in CalDAV/CardDAV URLs (Дилян Палаузов)
-	eds-I#99 - Fails to build against git master of OpenLDAP (vendor version check) (Дилян Палаузов)
-	eds-I#102 - Change order of gtkdoc-scangobj libraries (Milan Crha)
+	M!13 - Improve icons in previews with hiDPI monitors (Milan Crha)
+	M!16 - Add copyright and OASR content rating info into .appdata.xml file (Jiri Eischmann)
+	eds-I#112 - Credentials prompter re-asks for credentials of disabled accounts (Milan Crha)
+	eds-M!14 - Correct typo in a comment in the main CMakeLists.txt (Дилян Палаузов)
 
 Miscellaneous:
-	Use lower-case "mailto:" consistently in the code (Milan Crha)
-	Prevent crash in cal_data_model_notify_recurrences_cb() (Milan Crha)
-	[Flatpak] Cover changes in 'gdbus wait' timeout argument units (Milan Crha)
+	Fixed typo in string (Daniel Mustieles)
 	[Flatpak] Change how already running services are detected in the wrapper script (Milan Crha)
+	Prevent crash in cal_data_model_notify_recurrences_cb() (Milan Crha)
 	[Flatpak] Give access to filesystem's ~/.gnupg (Milan Crha)
+	Correct code typo in test-keyfile-settings-backend.c (Milan Crha)
+	Fix a possible memory leak in e-web-view.c:web_view_initialize() (Milan Crha)
+	Reference a GDBusProxy object in the synchronous call wrappers (Milan Crha)
+	Fix a crash when filling mail threaded view (Milan Crha)
+	Port to libecal-2.0 and adapt to libebook API changes (Milan Crha)
+	Address some issues reported by static analyzers (Coverity Scan, clang) (Milan Crha)
+	Correct type of ECalDataModel::timezone property (Milan Crha)
+	Miscellaneous changes for issues overlooked during port to libical-glib (Milan Crha)
 
 Translations:
-	Ask Hjorth Larsen (da)
+	Daniel Mustieles (es)
 	Jordi Mas (ca)
+	Kukuh Syafaat (id)
+	Asier Sarasua Garmendia (eu)
+	Carmen Bianca BAKKER (eo)
+	Fabio Tomat (fur)
+	Ask Hjorth Larsen (da)
 
-Evolution 3.32.1 2019-04-08
+Evolution 3.33.1 2019-04-22
 ---------------------------
 
 Bug Fixes:
+	Bug 202257 - Configurable folder tree sorting (Milan Crha)
+	Bug 203955 - Custom icon/text color for Mail folders (Milan Crha)
 	I#190 - Meeting editor doesn't show addresses after open when set to (Milan Crha)
+	I#210 - Port from gtkspell to gspell (Milan Crha)
+	I#256 - New collection account wizard UI improvements (Milan Crha)
 	I#286 - Double click on month/year in minicalendar switches view to Day View (Milan Crha)
+	I#323 - Show non-Work/Home TEL in the contacts preview (Milan Crha)
 	I#325 - F2 shortcut to Rename Folder stopped working (Milan Crha)
+	I#326 - Reword "Display reminders in notification area only" option (Veerasamy Sevagen)
 	I#327 - Paragraph format change in quotation can break stored selection (Milan Crha)
+	I#330 - Add option to display delivery notification attachments inline (Milan Crha)
 	I#336 - Change on an existing attendee not recognized by a meeting editor (Milan Crha)
+	I#338 - Add option to preset "Preserve my reminder" (Milan Crha)
 	I#339 - Include SUMMARY property in email reminders (Milan Crha)
 	I#343 - Composer autosave can overwrite backup with empty content (Milan Crha)
 	I#344 - Make 'next unread mail' shortcut jump to next folder (Milan Crha)
@@ -90,36 +296,49 @@ Bug Fixes:
 	I#370 - A collection enable/disable in Accounts not reflected in the Mail view (Milan Crha)
 	I#373 - [Flatpak] Do not restart already running D-Bus services (Milan Crha)
 	I#376 - Interactive search in the “Folder Subscriptions” does nothing (Milan Crha)
+	I#377 - Include in the “Tasks preview” the attendees (Milan Crha)
 	I#378 - Inconsistent Icons for Tasks with Attendees in To-Do bar (Milan Crha)
+	I#380 - [Calendar] Prefill start time in the future, rather than in the past (Milan Crha)
+	I#383 - [CompEditor] Set a keyboard shortcut for Save and Close (Milan Crha)
+	I#384 - [itip-formatter] Claim correct destination type in translated strings (Milan Crha)
 	I#386 - Forward as Attachment doesn't remember source message reference (Milan Crha)
 	I#390 - Free form expression search for Attachment doesn't work (Milan Crha)
 	I#392 - Template user variables not replaced with Alternative Reply (Milan Crha)
 	I#395 - Escape values in the task/memo preview (Milan Crha)
+	M!5 - Replace custom expand/collapse icons with gtk stock icons (Johannes Zellner)
+	M!9 - Remove unused variable from e-srv-config-lookup.c:srv_config_lookup_domain_sync() (Дилян Палаузов)
+	eds-I#94 - Remove -Wabi from the default C++ warning flags (Milan Crha)
+	eds-I#99 - Fails to build against git master of OpenLDAP (vendor version check) (Дилян Палаузов)
+	eds-I#102 - Change order of gtkdoc-scangobj libraries (Milan Crha)
 
 Miscellaneous:
 	Update flatpak 'master' version manifest (Milan Crha)
 	Expand/collapse buttons in vCard preview do nothing (Milan Crha)
 	Fix few memory leaks around vCard preview and mail attachment parsing (Milan Crha)
 	Fix some maybe uninitialized variable usages (Milan Crha)
+	Inline Forward headers bold in Plain Text mode (Milan Crha)
 	Fix a copy&paste error with LC_TIME in emcu_change_locale() (Milan Crha)
 	[CompEditor] Use CSS3 color name in the iCalendar COLOR property (Milan Crha)
 	Update flatpak README (Milan Crha)
+	Add a link to an online build manual into the README (Milan Crha)
 	Fix two memory leaks (Milan Crha)
+	Use lower-case "mailto:" consistently in the code (Milan Crha)
+	[mail-notification] Use sound theme by default (Milan Crha)
+	[Flatpak] Cover changes in 'gdbus wait' timeout argument units (Milan Crha)
 	help: Cover customizing keyboard shortcuts (Andre Klapper)
 	help: A custom Archive mail folder requires to first set a general one (Andre Klapper)
 	help: New mail notification in mail icon is not a star anymore (Andre Klapper)
+	help: Update screenshots of mail switcher to 3.32 style (Andre Klapper)
 	help: Update application icon for 3.32 (Andre Klapper)
 
 Translations:
-	Марко Костић (sr)
 	Gianvito Cavasoli (it)
 	Daniel Șerbănescu (ro)
 	Tim Sabsch (de)
-	Matej Urbančič (sl)
-	Asier Sarasua Garmendia (eu)
 	Bruce Cowan (en_GB)
-	Daniel Șerbănescu (ro)
 	Jordi Mas (ca)
+	Daniel Șerbănescu (ro)
+	Matej Urbančič (sl)
 	Ask Hjorth Larsen (da)
 	Anders Jonsson (sv)
 	Balázs Úr (hu)
