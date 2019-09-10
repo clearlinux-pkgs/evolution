@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.34.0
-Release  : 42
+Release  : 43
 URL      : https://download.gnome.org/sources/evolution/3.34/evolution-3.34.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.34/evolution-3.34.0.tar.xz
 Summary  : Manage your email, contacts and schedule
