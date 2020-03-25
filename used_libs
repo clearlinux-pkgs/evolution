@@ -29,6 +29,7 @@ libgweather-3.so.16
 libical-glib.so.3
 libical.so.3
 libicalvcal.so.3
+libjavascriptcoregtk-4.0.so.18
 libldap-2.4.so.2
 libm.so.6
 libnotify.so.4
