@@ -1,3 +1,66 @@
+Evolution 3.36.5 2020-08-07
+---------------------------
+
+Bug Fixes:
+	I#895 - "Time" portion of calendar entries not scaling with font (Stefan Paul Noack)
+	I#1017 - ECompEditor: Error when save-only (all instances) of a recurring event (Milan Crha)
+	I#1027 - Calendar: SEQUENCE not changed when modifying All Instances (Milan Crha)
+	I#1034 - Calendar: Event non-libical time zone reset to UTC on edit (Milan Crha)
+
+Miscellaneous:
+	EContactEditor: Other mailing address has stored incorrect address label (Milan Crha)
+	help: Mailing List filter criterion checks numerous mail headers (Andre Klapper)
+
+Translations:
+	Jordi Mas (ca)
+	Jwtiyar Nariman (ckb)
+	Yuri Chornoivan (uk)
+
+Evolution 3.36.4 2020-07-03
+---------------------------
+
+Bug Fixes:
+	I#963 - Composer: New message can incorrectly keep selected default account (Milan Crha)
+	I#969 - Workaround freeze on drag of message over composer body (Milan Crha)
+	I#979 - Undeletable empty item in folder list (Milan Crha)
+	I#982 - 'Message contains'-search broken in 3.36.3 (Milan Crha)
+	I#985 - Ensure 16px online/offline icon height in the status bar (Milan Crha)
+
+Translations:
+	Matej Urbančič (sl)
+	Baurzhan Muftakhidinov (kk)
+	Yuri Chornoivan (uk)
+	Charles Monzat (fr)
+
+Evolution 3.36.3 2020-05-29
+---------------------------
+
+Bug Fixes:
+	I#821 - Slow message search (Milan Crha)
+	I#884 - Composer: Text split for wrapping can produce invalid UTF-8 text (Milan Crha)
+	I#906 - composer-plain-text-starts-preformatted is not followed when replying to HTML emails (Milan Crha)
+	I#909 - Composer: Soft line breaks ignored in HTML after send (Milan Crha)
+	I#914 - Allow setting Reply-To and From values via a mailto: URI (Milan Crha)
+	I#915 - Fix some issues reported by Clang's ubsan sanitizer (Milan Crha)
+	I#917 - Crash under html_editor_update_actions (Milan Crha)
+	I#923 - e-canvas-background.c: Limit boundary rectangle to fit 'int' type (Milan Crha)
+	I#925 - Check _submissions._tcp SRV records during account setup (Milan Crha)
+	I#929 - Allow calendar week view to start on Sunday (Bryan Dunsmore)
+	I#947 - ECollectionAccountWizard: Error message hidden when sources' save failed (Milan Crha)
+	ews-I#99 - All-day events date shown by one day off (Milan Crha)
+
+Miscellaneous:
+	mail_execute_shell_command: Add logging for easier debugging (Milan Crha)
+	ECompEditorPageSchedule: Fix some minor issues reported by Coverity Scan (Milan Crha)
+	MessageList: Update localized re values only if the setting changed (Milan Crha)
+	EWebDAVConfigLookup: Clear output GError before using it (Milan Crha)
+	help: Fix broken Catalan help translation (Andre Klapper)
+	help: Add missing file to CMakeLists.txt (Andre Klapper)
+
+Translations:
+	Yuri Chornoivan (uk)
+	Jordi Mas (ca)
+
 Evolution 3.36.2 2020-04-24
 ---------------------------
 
