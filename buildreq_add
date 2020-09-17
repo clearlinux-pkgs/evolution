@@ -1,12 +1,12 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-intltool
 glib-dev
-openldap-dev
 gtk3-dev
+intltool
+itstool
+libgdata-dev
 nspr-dev
 nss-dev
-psmisc
-itstool
+openldap-dev
 perl(XML::Parser)
-libgdata-dev
+psmisc

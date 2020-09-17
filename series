@@ -1,3 +1,1 @@
-build.patch
-#0001-install-autostart-in-usr-share-rather-than-usr-etc.patch
-#CVE-2018-15587.patch
+#build.patch
