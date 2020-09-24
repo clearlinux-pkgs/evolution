@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.38.0
-Release  : 54
+Release  : 55
 URL      : https://download.gnome.org/sources/evolution/3.38/evolution-3.38.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.38/evolution-3.38.0.tar.xz
 Summary  : libraries needed for Evolution shell components
