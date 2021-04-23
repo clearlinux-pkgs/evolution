@@ -5,6 +5,6 @@ enchant-2>=${enchant2_minimum_version}
 enchant>=${enchant1_minimum_version}
 libnotify>=${libnotify_minimum_version}
 libsoup-2.4>=${soup_minimum_version}
+unity
 unity>=${libunity_minimum_version}
 webkit2gtk-4.0>=${webkit2gtk_minimum_version}
-unity
