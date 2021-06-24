@@ -4,7 +4,7 @@ atk
 cairo-gobject
 camel-1.2
 cryptui-0.0
-enchant
+enchant-2
 gail-3.0
 gcr-3
 gdk-pixbuf-2.0

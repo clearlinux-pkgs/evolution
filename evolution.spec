@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.40.2
-Release  : 63
+Release  : 64
 URL      : https://download.gnome.org/sources/evolution/3.40/evolution-3.40.2.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.40/evolution-3.40.2.tar.xz
 Summary  : libraries needed for Evolution shell components
@@ -34,7 +34,6 @@ BuildRequires : pkgconfig(atk)
 BuildRequires : pkgconfig(cairo-gobject)
 BuildRequires : pkgconfig(camel-1.2)
 BuildRequires : pkgconfig(cryptui-0.0)
-BuildRequires : pkgconfig(enchant)
 BuildRequires : pkgconfig(enchant-2)
 BuildRequires : pkgconfig(gail-3.0)
 BuildRequires : pkgconfig(gcr-3)
@@ -162,7 +161,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622829683
+export SOURCE_DATE_EPOCH=1624502184
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -183,7 +182,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1622829683
+export SOURCE_DATE_EPOCH=1624502184
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-3.40.2/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3

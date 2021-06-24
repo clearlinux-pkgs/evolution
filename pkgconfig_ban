@@ -1,6 +1,7 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
 _module0
+enchant
 enchant-2>=${enchant2_minimum_version}
 enchant>=${enchant1_minimum_version}
 libnotify>=${libnotify_minimum_version}
