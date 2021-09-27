@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.42.0
-Release  : 68
+Release  : 69
 URL      : https://download.gnome.org/sources/evolution/3.42/evolution-3.42.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.42/evolution-3.42.0.tar.xz
 Summary  : libraries needed for Evolution shell components
@@ -161,7 +161,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632418777
+export SOURCE_DATE_EPOCH=1632782432
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -182,7 +182,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1632418777
+export SOURCE_DATE_EPOCH=1632782432
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-3.42.0/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3
