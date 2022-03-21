@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.44.0
-Release  : 74
+Release  : 75
 URL      : https://download.gnome.org/sources/evolution/3.44/evolution-3.44.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.44/evolution-3.44.0.tar.xz
 Summary  : libraries needed for Evolution shell components
@@ -47,7 +47,6 @@ BuildRequires : pkgconfig(gsettings-desktop-schemas)
 BuildRequires : pkgconfig(gspell-1)
 BuildRequires : pkgconfig(gtk+-3.0)
 BuildRequires : pkgconfig(gtkspell3-3.0)
-BuildRequires : pkgconfig(gweather-3.0)
 BuildRequires : pkgconfig(libcanberra-gtk3)
 BuildRequires : pkgconfig(libcmark)
 BuildRequires : pkgconfig(libebackend-1.2)
@@ -162,7 +161,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647876354
+export SOURCE_DATE_EPOCH=1647890647
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -178,12 +177,13 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto -fstack-protector-st
 -DENABLE_TEXT_HIGHLIGHT=OFF \
 -DENABLE_PST_IMPORT=OFF \
 -DWITH_NSS_INCLUDES=/usr/include/ \
--DWITH_NSS_INCLUDES=/usr/include/nss3
+-DWITH_NSS_INCLUDES=/usr/include/nss3 \
+-DENABLE_WEATHER=OFF
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1647876354
+export SOURCE_DATE_EPOCH=1647890647
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-3.44.0/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3
@@ -6517,7 +6517,6 @@ popd
 /usr/lib64/evolution/modules/module-cal-config-contacts.so
 /usr/lib64/evolution/modules/module-cal-config-google.so
 /usr/lib64/evolution/modules/module-cal-config-local.so
-/usr/lib64/evolution/modules/module-cal-config-weather.so
 /usr/lib64/evolution/modules/module-cal-config-webcal.so
 /usr/lib64/evolution/modules/module-cal-config-webdav-notes.so
 /usr/lib64/evolution/modules/module-calendar.so
