@@ -4,7 +4,7 @@
 #
 Name     : evolution
 Version  : 3.46.2
-Release  : 95
+Release  : 96
 URL      : https://download.gnome.org/sources/evolution/3.46/evolution-3.46.2.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.46/evolution-3.46.2.tar.xz
 Summary  : libraries needed for Evolution shell components
