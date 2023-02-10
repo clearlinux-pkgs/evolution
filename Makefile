@@ -1,5 +1,5 @@
 PKG_NAME := evolution
-URL = https://download.gnome.org/sources/evolution/3.46/evolution-3.46.3.tar.xz
+URL = https://download.gnome.org/sources/evolution/3.46/evolution-3.46.4.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
