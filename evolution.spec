@@ -5,7 +5,7 @@
 #
 Name     : evolution
 Version  : 3.48.1
-Release  : 108
+Release  : 109
 URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.1.tar.xz
 Summary  : libraries needed for Evolution shell components
@@ -61,7 +61,6 @@ BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(nspr)
 BuildRequires : pkgconfig(shared-mime-info)
 BuildRequires : pkgconfig(sqlite3)
-BuildRequires : pkgconfig(webkit2gtk-4.0)
 BuildRequires : pkgconfig(webkit2gtk-4.1)
 BuildRequires : psmisc
 # Suppress stripping binaries
@@ -167,17 +166,40 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682361433
+export SOURCE_DATE_EPOCH=1683312233
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+%cmake .. -DWITH_NSPR_INCLUDES=/usr/include/ \
+-DENABLE_YTNEF=OFF \
+-DENABLE_TEXT_HIGHLIGHT=OFF \
+-DENABLE_PST_IMPORT=OFF \
+-DWITH_NSS_INCLUDES=/usr/include/ \
+-DWITH_NSS_INCLUDES=/usr/include/nss3 \
+-DENABLE_WEATHER=OFF
+make  %{?_smp_mflags}
+popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 %cmake .. -DWITH_NSPR_INCLUDES=/usr/include/ \
 -DENABLE_YTNEF=OFF \
 -DENABLE_TEXT_HIGHLIGHT=OFF \
@@ -189,7 +211,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1682361433
+export SOURCE_DATE_EPOCH=1683312233
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3 || :
@@ -202,10 +224,14 @@ cp %{_builddir}/evolution-%{version}/docs/COPYING-DOCS.CCBYSA %{buildroot}/usr/s
 cp %{_builddir}/evolution-%{version}/docs/COPYING-DOCS.GFDL %{buildroot}/usr/share/package-licenses/evolution/240c69f006fcb369389272cf0475392633f3b92c || :
 cp %{_builddir}/evolution-%{version}/help/COPYING-DOCS.CCBYSA %{buildroot}/usr/share/package-licenses/evolution/981f80d8daa1dc8bff466b65c9b6bfbb3723ccaa || :
 cp %{_builddir}/evolution-%{version}/help/COPYING-DOCS.GFDL %{buildroot}/usr/share/package-licenses/evolution/240c69f006fcb369389272cf0475392633f3b92c || :
+pushd clr-build-avx2
+%make_install_v3  || :
+popd
 pushd clr-build
 %make_install
 popd
 %find_lang evolution
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -227,6 +253,7 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/evolution
 /usr/bin/evolution
 
 %files data
@@ -6551,6 +6578,79 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelrss.so
+/V3/usr/lib64/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
+/V3/usr/lib64/evolution/libeabutil.so
+/V3/usr/lib64/evolution/libeabwidgets.so
+/V3/usr/lib64/evolution/libecontacteditor.so
+/V3/usr/lib64/evolution/libecontactlisteditor.so
+/V3/usr/lib64/evolution/libecontactprint.so
+/V3/usr/lib64/evolution/libemail-engine.so
+/V3/usr/lib64/evolution/libessmime.so
+/V3/usr/lib64/evolution/libevolution-addressbook-importers.so
+/V3/usr/lib64/evolution/libevolution-calendar-importers.so
+/V3/usr/lib64/evolution/libevolution-calendar.so
+/V3/usr/lib64/evolution/libevolution-mail-composer.so
+/V3/usr/lib64/evolution/libevolution-mail-formatter.so
+/V3/usr/lib64/evolution/libevolution-mail-importers.so
+/V3/usr/lib64/evolution/libevolution-mail.so
+/V3/usr/lib64/evolution/libevolution-shell.so
+/V3/usr/lib64/evolution/libevolution-smime.so
+/V3/usr/lib64/evolution/libevolution-util.so
+/V3/usr/lib64/evolution/libgnomecanvas.so
+/V3/usr/lib64/evolution/modules/module-accounts-window.so
+/V3/usr/lib64/evolution/modules/module-addressbook.so
+/V3/usr/lib64/evolution/modules/module-appearance-settings.so
+/V3/usr/lib64/evolution/modules/module-backup-restore.so
+/V3/usr/lib64/evolution/modules/module-bogofilter.so
+/V3/usr/lib64/evolution/modules/module-book-config-carddav.so
+/V3/usr/lib64/evolution/modules/module-book-config-google.so
+/V3/usr/lib64/evolution/modules/module-book-config-ldap.so
+/V3/usr/lib64/evolution/modules/module-book-config-local.so
+/V3/usr/lib64/evolution/modules/module-cal-config-caldav.so
+/V3/usr/lib64/evolution/modules/module-cal-config-contacts.so
+/V3/usr/lib64/evolution/modules/module-cal-config-google.so
+/V3/usr/lib64/evolution/modules/module-cal-config-local.so
+/V3/usr/lib64/evolution/modules/module-cal-config-webcal.so
+/V3/usr/lib64/evolution/modules/module-cal-config-webdav-notes.so
+/V3/usr/lib64/evolution/modules/module-calendar.so
+/V3/usr/lib64/evolution/modules/module-composer-autosave.so
+/V3/usr/lib64/evolution/modules/module-composer-to-meeting.so
+/V3/usr/lib64/evolution/modules/module-config-lookup.so
+/V3/usr/lib64/evolution/modules/module-contact-photos.so
+/V3/usr/lib64/evolution/modules/module-gravatar.so
+/V3/usr/lib64/evolution/modules/module-itip-formatter.so
+/V3/usr/lib64/evolution/modules/module-mail-config.so
+/V3/usr/lib64/evolution/modules/module-mail.so
+/V3/usr/lib64/evolution/modules/module-mailto-handler.so
+/V3/usr/lib64/evolution/modules/module-mdn.so
+/V3/usr/lib64/evolution/modules/module-offline-alert.so
+/V3/usr/lib64/evolution/modules/module-plugin-lib.so
+/V3/usr/lib64/evolution/modules/module-plugin-manager.so
+/V3/usr/lib64/evolution/modules/module-prefer-plain.so
+/V3/usr/lib64/evolution/modules/module-rss.so
+/V3/usr/lib64/evolution/modules/module-settings.so
+/V3/usr/lib64/evolution/modules/module-spamassassin.so
+/V3/usr/lib64/evolution/modules/module-startup-wizard.so
+/V3/usr/lib64/evolution/modules/module-vcard-inline.so
+/V3/usr/lib64/evolution/modules/module-webkit-editor.so
+/V3/usr/lib64/evolution/modules/module-webkit-inspector.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-dbx-import.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-email-custom-header.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-evolution-attachment-reminder.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-evolution-bbdb.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-evolution-sender-validation.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-external-editor.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-face.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-mail-notification.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-mail-to-task.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-mailing-list-actions.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-prefer-plain.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-publish-calendar.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-save-calendar.so
+/V3/usr/lib64/evolution/plugins/liborg-gnome-templates.so
+/V3/usr/lib64/evolution/web-extensions/libewebextension.so
+/V3/usr/lib64/evolution/web-extensions/webkit-editor/module-webkit-editor-webextension.so
 /usr/lib64/evolution-data-server/camel-providers/libcamelrss.so
 /usr/lib64/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
 /usr/lib64/evolution/libeabutil.so
@@ -6627,6 +6727,8 @@ popd
 
 %files libexec
 %defattr(-,root,root,-)
+/V3/usr/libexec/evolution/evolution-backup
+/V3/usr/libexec/evolution/killev
 /usr/libexec/evolution/evolution-backup
 /usr/libexec/evolution/killev
 
