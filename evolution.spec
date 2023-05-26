@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : evolution
-Version  : 3.48.1
-Release  : 109
-URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.1.tar.xz
-Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.1.tar.xz
+Version  : 3.48.2
+Release  : 110
+URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.2.tar.xz
+Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.2.tar.xz
 Summary  : libraries needed for Evolution shell components
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
@@ -158,15 +158,15 @@ man components for the evolution package.
 
 
 %prep
-%setup -q -n evolution-3.48.1
-cd %{_builddir}/evolution-3.48.1
+%setup -q -n evolution-3.48.2
+cd %{_builddir}/evolution-3.48.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683312233
+export SOURCE_DATE_EPOCH=1685124442
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -211,7 +211,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1683312233
+export SOURCE_DATE_EPOCH=1685124442
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3 || :
@@ -352,6 +352,8 @@ popd
 /usr/share/evolution/icons/hicolor/16x16/actions/view-calendar-week.png
 /usr/share/evolution/icons/hicolor/16x16/actions/view-calendar-workweek.png
 /usr/share/evolution/icons/hicolor/16x16/actions/view-calendar-year.png
+/usr/share/evolution/icons/hicolor/16x16/actions/x-office-address-book.png
+/usr/share/evolution/icons/hicolor/16x16/actions/x-office-calendar.png
 /usr/share/evolution/icons/hicolor/16x16/apps/contact-editor.png
 /usr/share/evolution/icons/hicolor/16x16/apps/im-aim.png
 /usr/share/evolution/icons/hicolor/16x16/apps/im-icq.png
@@ -492,6 +494,8 @@ popd
 /usr/share/evolution/icons/hicolor/22x22/actions/view-calendar-week.png
 /usr/share/evolution/icons/hicolor/22x22/actions/view-calendar-workweek.png
 /usr/share/evolution/icons/hicolor/22x22/actions/view-calendar-year.png
+/usr/share/evolution/icons/hicolor/22x22/actions/x-office-address-book.png
+/usr/share/evolution/icons/hicolor/22x22/actions/x-office-calendar.png
 /usr/share/evolution/icons/hicolor/22x22/apps/contact-editor.png
 /usr/share/evolution/icons/hicolor/22x22/apps/im-aim.png
 /usr/share/evolution/icons/hicolor/22x22/apps/im-icq.png
@@ -645,6 +649,8 @@ popd
 /usr/share/evolution/icons/hicolor/24x24/actions/view-calendar-week.png
 /usr/share/evolution/icons/hicolor/24x24/actions/view-calendar-workweek.png
 /usr/share/evolution/icons/hicolor/24x24/actions/view-calendar-year.png
+/usr/share/evolution/icons/hicolor/24x24/actions/x-office-address-book.png
+/usr/share/evolution/icons/hicolor/24x24/actions/x-office-calendar.png
 /usr/share/evolution/icons/hicolor/24x24/apps/contact-editor.png
 /usr/share/evolution/icons/hicolor/24x24/apps/im-aim.png
 /usr/share/evolution/icons/hicolor/24x24/apps/im-icq.png
@@ -781,6 +787,8 @@ popd
 /usr/share/evolution/icons/hicolor/32x32/actions/view-calendar-week.png
 /usr/share/evolution/icons/hicolor/32x32/actions/view-calendar-workweek.png
 /usr/share/evolution/icons/hicolor/32x32/actions/view-calendar-year.png
+/usr/share/evolution/icons/hicolor/32x32/actions/x-office-address-book.png
+/usr/share/evolution/icons/hicolor/32x32/actions/x-office-calendar.png
 /usr/share/evolution/icons/hicolor/32x32/apps/contact-editor.png
 /usr/share/evolution/icons/hicolor/32x32/places/folder-templates.png
 /usr/share/evolution/icons/hicolor/32x32/status/accessories-text-editor.png
@@ -904,6 +912,8 @@ popd
 /usr/share/evolution/icons/hicolor/48x48/actions/stock_people.png
 /usr/share/evolution/icons/hicolor/48x48/actions/stock_timezone.png
 /usr/share/evolution/icons/hicolor/48x48/actions/stock_todo.png
+/usr/share/evolution/icons/hicolor/48x48/actions/x-office-address-book.png
+/usr/share/evolution/icons/hicolor/48x48/actions/x-office-calendar.png
 /usr/share/evolution/icons/hicolor/48x48/apps/contact-editor.png
 /usr/share/evolution/icons/hicolor/48x48/categories/preferences-autocompletion.png
 /usr/share/evolution/icons/hicolor/48x48/categories/preferences-calendar-and-tasks.png
