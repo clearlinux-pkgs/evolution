@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : evolution
-Version  : 3.48.2
-Release  : 112
-URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.2.tar.xz
-Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.2.tar.xz
+Version  : 3.48.3
+Release  : 113
+URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.3.tar.xz
+Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.3.tar.xz
 Summary  : libraries needed for Evolution shell components
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
@@ -158,15 +158,15 @@ man components for the evolution package.
 
 
 %prep
-%setup -q -n evolution-3.48.2
-cd %{_builddir}/evolution-3.48.2
+%setup -q -n evolution-3.48.3
+cd %{_builddir}/evolution-3.48.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685500473
+export SOURCE_DATE_EPOCH=1685975686
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -211,7 +211,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1685500473
+export SOURCE_DATE_EPOCH=1685975686
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3 || :
