@@ -1,50 +1,169 @@
-Evolution 3.48.4 2023-06-30
+Evolution 3.50.0 2023-09-15
 ---------------------------
 
 Bug Fixes:
-	I#2400 - HTML attachment viewport is tiny
-	I#2401 - EMailFormatter: Style change not propagated to all instances
+	I#1488 - Backspace in preedit mode can delete extra letters
+	I#2503 - Mail: Signed attachment causes hide of unsigned body
+	I#2508 - Mail: Duplicate items in the popup menu
+	I#2514 - Change default response in 'Add Attachment' dialog
+	M!124 - Fix typos ("begining", "ineficient") in code comments (Дилян Палаузов)
 
 Miscellaneous:
-	EMailSignatureScriptDialog: Cannot choose script file under Flatpak
-	EMeetingListStore: Wrong role section picked in Attendees dialog
-
-Evolution 3.48.3 2023-06-02
----------------------------
-
-Bug Fixes:
-	I#2362 - EShellSearchbar: Cannot clear search by deleting text
-	I#2380 - Mail: Preview content sometimes grows indefinitely
-	I#2381 - Composer: Use 'Wrap quoted text in replies' option also for text/html parts
-	I#2382 - Mail: Workaround recursion in iframe height computation
-
-Evolution 3.48.2 2023-05-26
----------------------------
-
-Bug Fixes:
-	I#1463 - Updated attachments are shown as updated, but sent in old version
-	I#1810 - TNEF attached message decoded incorrectly
-	I#2310 - Mail: Preview panel has too many vertical scrollbars
-	I#2332 - Mail: Recalc preview iframe heights more often
-	I#2335 - Composer: HTML formatting lost on paste from external browser
-	I#2340 - Inconsistent S/MIME signature validation results
-	I#2345 - Wrong S/MIME certificate selection for encrypted email
-	I#2355 - Search input field's clear button unclickable during first entry
-	I#2356 - PGP-MIME: Show decrypted protected header as Subject in preview
-	I#2371 - Composer: Added extra quotation level after draft open
-	I#2372 - Bundle 'x-office-...' non-symbolic icons
-
-Miscellaneous:
-	rss: Fix recently introduced memory leaks
+	itip-formatter: Skip well-known read-only sources
+	EHeaderBarButton: Can be half-sensitive with set menu
+	EColorCombo: Don't set own default palette
+	ci: Rename org.gnome.evolution.nightly to org.gnome.Evolution.Devel
 
 Translations:
-	Danial Behzadi (fa)
+	Anders Jonsson (sv)
+	Aurimas Černius (lt)
+	Balázs Úr (hu)
+	Daniel Rusek (cs)
+	Emin Tufan Çetin (tr)
+	Jean-Marc Tissières (fr)
+	Jordi Mas (ca)
+	Piotr Drąg (pl)
+	Tim Sabsch (de)
 
-Evolution 3.48.1 2023-04-21
+Evolution 3.49.3 2023-09-01
 ---------------------------
 
 Bug Fixes:
+	I#933 - CompEditor: Attendees dialogs out of sync in Schedule and General tab
+	I#941 - ESrvConfigLookup: Consider mail configuration complete
+	I#971 - Mail: Add option to hide unread count in folder tree
+	I#1054 - Preferences: Network proxy port not always saved
+	I#1180 - Calendar: Disallow change of target client for existing components ][
+	I#1247 - Error message only half readable (insufficient panel height)
+	I#1254 - Pair backup process window with the main application
+	I#1324 - Composer: HTML formatting left after mode change to Plain Text
+	I#1340 - ESpinner: Cache working.png into memory
+	I#1388 - mail-to-task: Extract text also from HTML-only messages
+	I#2442 - Correct color of expand/collapse buttons in preview in Dark mode
+	I#2445 - itip: Limit headers in multipart/alternative part
+	I#2446 - Calendar: Change how categories are exported into preview
+	I#2447 - itip-formatter: Rename Send reply to Sender -> Organizer
+	I#2450 - CompEditor: Enhance time re-calculation on overlap change
+	I#2451 - Mail: Detect which images WebKitGTK can show
+	I#2454 - Calendar: Minicalendar blocks sidebar shrink
+	I#2456 - Add Move / Copy to folder into message preview context menu
+	I#2457 - Shell: Add option to prefer symbolic icons
+	I#2460 - First-Run Assistant: Set file filter to backup file chooser
+	I#2463 - Mail: Add filter condition for iCalendar attachment
+	I#2467 - ITip formatter ignores Dark mode preference for text/plain MIME parts
+	I#2469 - Calendar: Hard to read meeting time selector header in Dark mode
+	I#2476 - mail-to-task: Do not create all day events
+	I#2480 - Mail: Add option to auto-show insecure parts
+	I#2482 - CompEditor: Ignore abbreviated date format
+	I#2488 - Only headers visible for unsigned emails attached to signed emails
+	I#2491 - Calendar: Import only valid iCalendar files
+	I#2494 - Add "Send after 1 minute" option to composer's "Send through Outbox" (Roland Tapken)
+	I#2496 - "Next" in Collection Account setup can be disabled for no valid reason
+
+Miscellaneous:
+	Replace internal functions with new functions from libecal
+	alarm-notify: Drop dependency on the evolution-calendar part
+	Tweak how long to wait for a 'connected' state when opening an EClient
+	evolution-util: Declare build dependency on libsecret
+	Force icon size for categories
+	itip: Export to HTML without category icons
+	Composer: Do not send 'Autocrypt' headers larger than 10KB
+	Always use attachments for 'Forward as iCalendar'
+	CompEditor: Cannot move memo/task between lists
+	Calendar: Ask for deletion notice only for attendees
+	Postpone some operations from GtkWidget::size_allocate() to idle callback
+	test-web-view-jsc: Adapt tests to WebKitGTK 2.40.3 behavior changes
+	test-markdown: Fix a memory leak
+
+Translations:
+	Anders Jonsson (sv)
+	Asier Sarasua Garmendia (eu)
+	Boyuan Yang (zh_CN)
+	Ekaterine Papava (ka)
+	Fran Dieguez (gl)
+	Hugo Carvalho (pt)
+	Jiri Grönroos (fi)
+	Jürgen Benvenuti (de)
+	Kukuh Syafaat (id)
+	Piotr Drąg (pl)
+	Sabri Ünal (tr)
+	Sergej A (ru)
+	Yuri Chornoivan (uk)
+
+Evolution 3.49.2 2023-08-04
+---------------------------
+
+Bug Fixes:
+	I#17 - Sorting Contacts in the 'Address cards' view
+	I#130 - itip-formatter: Send meeting invitations as multipart/alternative
+	I#203 - Improve handling of suspiciously signed/encrypted emails (multiparts)
+	I#375 - Support Autocrypt
+	I#609 - Calendar: Use user-configured date format in the editor
+	I#662 - Option to get Delivery Status Notification (DSN)
+	I#848 - Allow to save forwarded mails in the original message folder
+	I#883 - ETimezoneEntry: Enable completion by timezone location
+	I#967 - Add save e-mails individually as eml format
+	I#1081 - Mail: Allow to import PGP keys
+	I#1180 - Calendar: Disallow change of target client for existing components
+	I#1750 - Composer: Offer to send without encryption when key is missing
+	I#2347 - CompEditor: Open map from Location field
+	I#2364 - Mail: Add option to group messages into flat threads
+	I#2398 - CompEditor: Allow unset recurrence for uneditable recurrences
+	I#2399 - alarm-notify: Detect format change in settings
+	I#2407 - Contacts: Add columns for mailing address fields
+	I#2412 - Composer: Format change can discard message text
+	I#2413 - Ability to update / overwrite a template when saving it
+	I#2415 - "Archive…" direct action should not have ellipsis dots at the end
+	I#2416 - The "Select Address Book" dialog has disabled OK button after open
+	I#2417 - Calendar: Use meeting's timezone in the comp editor Schedule tab
+	I#2423 - Re-enable contact maps feature
+	I#2430 - Calendar: Disallow save for all instances on a detached instance
+	I#2433 - Calendar does not remember selected weeks when scrolling via button
+	I#2443 - Calendar: Missing events in Month view print out
+	M!120 - Correct wording of mail composer's external attachments warning infobar (Jeff Fortin Tam)
+	M!121 - Composer: Change Max Line Length to RFC 2822 Limits (Cameron)
+	eds-I#59 - CalDAV: Allow to disable schedule reply on remove
+	eds-I#180 - Add option to reduce book/cal data usage when on a metered connection
+	eds-I#483 - Calendar: Add option to (not) delete "Declined" meeting
+
+Miscellaneous:
+	Calendar: Indicate detached instance of a recurring event
+	Mail: Correct function prototype declaration (-Wenum-int-mismatch)
+	MessageList: Remove unused code
+	itip-formatter: Allow writing user response comments for all calendars
+	itip-formatter: Disable send of iTip messages when disabled by the user
+	CompEditor: Show source full name for existing components
+	EMeetingStore: Avoid runtime warning when setting NULL time zone
+	Composer: Clear old alerts before sending a message
+
+Translations:
+	Asier Sarasua Garmendia (eu)
+	Ekaterine Papava (ka)
+	Hugo Carvalho (pt)
+	Kukuh Syafaat (id)
+	Roberto MF (es)
+	Sergej A (ru)
+	Yuri Chornoivan (uk)
+
+Evolution 3.49.1 2023-06-30
+---------------------------
+
+Bug Fixes:
+	I#1039 - Mail: Cannot change the search domain with active search
+	I#1111 - iTip formatter: Hide the read-only calendars in the list
+	I#1268 - Alternative Reply: Regroup the reply options related to quoting
+	I#1293 - Allow to Search Contact's Phone With Numbers Only
+	I#1357 - Option to disable saving a copy of sent messages
+	I#1437 - Mail: Warn when adding an existing label
+	I#1463 - Updated attachments are shown as updated, but sent in old version
+	I#1596 - Add translation context to "Title" word
+	I#1662 - Composer: Redirect cannot scroll message content
+	I#1810 - TNEF attached message decoded incorrectly
+	I#1812 - Mail: Expand Aliases box in the Account Editor
+	I#1813 - Preferences system timezone checkbox annoyance
+	I#1830 - ECompEditor: Show Type column by default
 	I#1950 - Composer: Copy/paste changes text size in HTML mode
+	I#2277 - Include signature settings in New Mail Account wizard
 	I#2278 - Signature is re-added to a Draft mail after open
 	I#2282 - Calendar: Summary not always shown in the Day View
 	I#2288 - Blockquotes styling changes in Markdown live preview when editing area is focused
@@ -52,6 +171,7 @@ Bug Fixes:
 	I#2291 - Mail: libunity badge counter does not disappear
 	I#2293 - Cannot import pkcs12 with empty password
 	I#2302 - Mail: Space bar no longer scrolls preview messages
+	I#2310 - Mail: Preview panel has too many vertical scrollbars
 	I#2317 - ESpinner: Do not animate when animations are disabled
 	I#2318 - Ctrl+Shift+F does not focus the search field when already visible
 	I#2319 - Composer: Bulleted list margin inconsistent in HTML
@@ -59,21 +179,74 @@ Bug Fixes:
 	I#2324 - ECompEditor: Classification submenu inaccessible for read-only calendars
 	I#2326 - RSS: Limit re-download on content change, if possible
 	I#2330 - Contacts: LDAP not searching for contact after launch
+	I#2332 - Mail: Recalc preview iframe heights more often
+	I#2335 - Composer: HTML formatting lost on paste from external browser
+	I#2340 - Inconsistent S/MIME signature validation results
+	I#2345 - Wrong S/MIME certificate selection for encrypted email
+	I#2350 - Claim errors from Contact Quick-Add in the GUI
+	I#2354 - Composer: Notify about attachment file change before send
+	I#2355 - Search input field's clear button unclickable during first entry
+	I#2356 - PGP-MIME: Show decrypted protected header as Subject in preview
+	I#2362 - EShellSearchbar: Cannot clear search by deleting text
+	I#2371 - Composer: Added extra quotation level after draft open
+	I#2372 - Bundle 'x-office-...' non-symbolic icons
+	I#2377 - Composer: Add option to disable plaintext markdown input text sanitizing
+	I#2380 - Mail: Preview content sometimes grows indefinitely
+	I#2381 - Composer: Use 'Wrap quoted text in replies' option also for text/html parts
+	I#2382 - Mail: Workaround recursion in iframe height computation
+	I#2400 - HTML attachment viewport is tiny
+	I#2401 - EMailFormatter: Style change not propagated to all instances
 	M!118 - iTIP-formatter: respect the color-scheme in HTML MIME parts (Дилян Палаузов)
+	eds-I#477 - Add search folder condition for overdue messages
 
 Miscellaneous:
 	e-gtkemojichooser: Correct packing of the internal widgets
+	EMailDisplay: Correct "formatter" property definition
 	Add plugins' directory into WebKitGTK only when it exists
+	EMFolderProperties: Ignore persistent folder properties without 'blurb'
+	flatpak: Stop disabling WebKitGTK's sandbox
 	e-util: Optimize e_util_check_gtk_bindings_in_key_press_event_cb() a bit
+	itip-view: Correct text for PUBLISH of task/memo without organizer
 	Calendar: Add shortcuts for move to previous/next date
 	Misc: Update contact information in the README.md file
 	README.md: Update information about the mailing list
+	itip-view: Sort sources by the source selector sort order
+	EMailConfigSecurityPage: Add hint for OpenPGP Key ID
+	RSS: Claim an error when feed download fails
+	Replace deprecated 'web-process-crashed' with 'web-process-terminated' signal
+	rss: Fix recently introduced memory leaks
+	DOAP: Update mailing list URL (Andre Klapper)
+	DOAP: Add <support-forum> entry for discourse.gnome.org (Andre Klapper)
+	Mail: Fix runtime warning on selecting non-selectable folder
+	Composer: Tabs replaced when opening message from Outbox
+	Correct "GNOME" word in the README.md
+	EMailSignatureScriptDialog: Cannot choose script file under Flatpak
+	Remove unneeded EMailFormatterClass::colors property
+	itip-formatter: Move JavaScript code from C to e-web-view.js
+	Calendar: Rename "Unmatched" filter to "Without Category"
+	eab_transfer_contacts: Fix a possible memory leak
+	Fix few memory leaks in the address book code
+	Use org.freedesktop.Sdk.Extension.vala in flatpak manifests
+	filter-rule: Scroll to the added condition/action
+	EMeetingListStore: Wrong role section picked in Attendees dialog
+	Contacts: Replace minicard view with cursor-like view and gtk+ widgets
 
 Translations:
+	Aleksandr Melman (ru)
+	Asier Sarasua Garmendia (eu)
+	Balázs Úr (hu)
 	Boyuan Yang (zh_CN)
 	Danial Behzadi (fa)
+	Ekaterine Papava (ka)
+	Fabio Tomat (fur)
+	Hugo Carvalho (pt)
+	Jordi Mas (ca)
+	Kukuh Syafaat (id)
 	Nathan Follens (nl)
 	Piotr Drąg (pl)
+	Sabri Ünal (tr)
+	Sergej A (ru)
+	Yuri Chornoivan (uk)
 
 Evolution 3.48.0 2023-03-17
 ---------------------------

@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : evolution
-Version  : 3.48.4
-Release  : 115
-URL      : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.4.tar.xz
-Source0  : https://download.gnome.org/sources/evolution/3.48/evolution-3.48.4.tar.xz
+Version  : 3.50.0
+Release  : 116
+URL      : https://download.gnome.org/sources/evolution/3.50/evolution-3.50.0.tar.xz
+Source0  : https://download.gnome.org/sources/evolution/3.50/evolution-3.50.0.tar.xz
 Summary  : libraries needed for Evolution shell components
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
@@ -55,6 +55,7 @@ BuildRequires : pkgconfig(libebook-1.2)
 BuildRequires : pkgconfig(libedataserver-1.2)
 BuildRequires : pkgconfig(libedataserverui-1.2)
 BuildRequires : pkgconfig(libnotify)
+BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
@@ -158,15 +159,15 @@ man components for the evolution package.
 
 
 %prep
-%setup -q -n evolution-3.48.4
-cd %{_builddir}/evolution-3.48.4
+%setup -q -n evolution-3.50.0
+cd %{_builddir}/evolution-3.50.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688412568
+export SOURCE_DATE_EPOCH=1694791340
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -211,7 +212,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688412568
+export SOURCE_DATE_EPOCH=1694791340
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution/62066b13a35774834f104c2ff075ce679a0f75a3 || :
@@ -1070,6 +1071,7 @@ popd
 /usr/share/evolution/icons/hicolor/scalable/actions/markdown-preview.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/markdown-quote-dark.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/markdown-quote.svg
+/usr/share/evolution/icons/hicolor/scalable/actions/stock_bell-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_insert-note-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_insert-rule-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_insert-table-symbolic.svg
@@ -1082,6 +1084,7 @@ popd
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_task-assigned-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_task-assigned-to-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/stock_task-symbolic.svg
+/usr/share/evolution/icons/hicolor/scalable/actions/stock_timezone-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/user-trash-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/view-calendar-day-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/view-calendar-day.svg
@@ -1095,6 +1098,8 @@ popd
 /usr/share/evolution/icons/hicolor/scalable/actions/view-calendar-workweek.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/view-calendar-year-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/view-calendar-year.svg
+/usr/share/evolution/icons/hicolor/scalable/actions/view-pin-symbolic.svg
+/usr/share/evolution/icons/hicolor/scalable/actions/view-pin.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/x-office-address-book-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/actions/x-office-calendar-symbolic.svg
 /usr/share/evolution/icons/hicolor/scalable/apps/evolution-mail-symbolic.svg
@@ -4975,6 +4980,236 @@ popd
 /usr/share/help/oc/evolution/using-categories.page
 /usr/share/help/oc/evolution/xinclude-filter-vfolder-conditions.xml
 /usr/share/help/oc/evolution/xinclude-searching.xml
+/usr/share/help/pt/evolution/backup-restore.page
+/usr/share/help/pt/evolution/calendar-alarms-and-reminders.page
+/usr/share/help/pt/evolution/calendar-caldav.page
+/usr/share/help/pt/evolution/calendar-classifications.page
+/usr/share/help/pt/evolution/calendar-free-busy.page
+/usr/share/help/pt/evolution/calendar-google.page
+/usr/share/help/pt/evolution/calendar-layout-appointment-display.page
+/usr/share/help/pt/evolution/calendar-layout-general-formatting.page
+/usr/share/help/pt/evolution/calendar-layout-views.page
+/usr/share/help/pt/evolution/calendar-layout.page
+/usr/share/help/pt/evolution/calendar-local.page
+/usr/share/help/pt/evolution/calendar-marcus-bains-line.page
+/usr/share/help/pt/evolution/calendar-meetings-delegating.page
+/usr/share/help/pt/evolution/calendar-meetings-replying-to-invitation.page
+/usr/share/help/pt/evolution/calendar-meetings-sending-invitation.page
+/usr/share/help/pt/evolution/calendar-meetings.page
+/usr/share/help/pt/evolution/calendar-organizing.page
+/usr/share/help/pt/evolution/calendar-publishing.page
+/usr/share/help/pt/evolution/calendar-recurrence.page
+/usr/share/help/pt/evolution/calendar-searching.page
+/usr/share/help/pt/evolution/calendar-sharing-information.page
+/usr/share/help/pt/evolution/calendar-timezones.page
+/usr/share/help/pt/evolution/calendar-usage-add-appointment.page
+/usr/share/help/pt/evolution/calendar-usage-delete-appointment.page
+/usr/share/help/pt/evolution/calendar-usage-edit-appointment.page
+/usr/share/help/pt/evolution/calendar-usage.page
+/usr/share/help/pt/evolution/calendar-using-several-calendars.page
+/usr/share/help/pt/evolution/calendar-weather.page
+/usr/share/help/pt/evolution/calendar-webdav.page
+/usr/share/help/pt/evolution/contacts-add-automatically.page
+/usr/share/help/pt/evolution/contacts-autocompletion.page
+/usr/share/help/pt/evolution/contacts-google.page
+/usr/share/help/pt/evolution/contacts-ldap.page
+/usr/share/help/pt/evolution/contacts-libreoffice.page
+/usr/share/help/pt/evolution/contacts-local.page
+/usr/share/help/pt/evolution/contacts-organizing.page
+/usr/share/help/pt/evolution/contacts-searching.page
+/usr/share/help/pt/evolution/contacts-usage-add-contact.page
+/usr/share/help/pt/evolution/contacts-usage-delete-contact.page
+/usr/share/help/pt/evolution/contacts-usage-edit-contact.page
+/usr/share/help/pt/evolution/contacts-usage.page
+/usr/share/help/pt/evolution/contacts-using-contact-lists.page
+/usr/share/help/pt/evolution/contacts-using-several-addressbooks.page
+/usr/share/help/pt/evolution/credits.page
+/usr/share/help/pt/evolution/customize-ui-items.page
+/usr/share/help/pt/evolution/data-storage.page
+/usr/share/help/pt/evolution/default-browser.page
+/usr/share/help/pt/evolution/deleting-appointments.page
+/usr/share/help/pt/evolution/deleting-emails.page
+/usr/share/help/pt/evolution/deleting-to-free-disk-space.page
+/usr/share/help/pt/evolution/exporting-data-calendar.page
+/usr/share/help/pt/evolution/exporting-data-contacts.page
+/usr/share/help/pt/evolution/exporting-data-mail.page
+/usr/share/help/pt/evolution/exporting-data.page
+/usr/share/help/pt/evolution/figures/color-000000.png
+/usr/share/help/pt/evolution/figures/color-204a87.png
+/usr/share/help/pt/evolution/figures/color-2e3436.png
+/usr/share/help/pt/evolution/figures/color-4e9a06.png
+/usr/share/help/pt/evolution/figures/color-5c3566.png
+/usr/share/help/pt/evolution/figures/color-8f5902.png
+/usr/share/help/pt/evolution/figures/color-a40000.png
+/usr/share/help/pt/evolution/figures/color-c4a000.png
+/usr/share/help/pt/evolution/figures/color-ccccccffffff.png
+/usr/share/help/pt/evolution/figures/color-ce5c00.png
+/usr/share/help/pt/evolution/figures/evolution.svg
+/usr/share/help/pt/evolution/figures/html-composer-insert-image.png
+/usr/share/help/pt/evolution/figures/html-composer-insert-link.png
+/usr/share/help/pt/evolution/figures/html-composer-insert-rule.png
+/usr/share/help/pt/evolution/figures/html-composer-insert-table.png
+/usr/share/help/pt/evolution/figures/minus-icon.png
+/usr/share/help/pt/evolution/figures/new-mail-switcher.png
+/usr/share/help/pt/evolution/figures/plus-icon.png
+/usr/share/help/pt/evolution/figures/search-icon.png
+/usr/share/help/pt/evolution/figures/window-overview-layers.png
+/usr/share/help/pt/evolution/flatpak-limitations.page
+/usr/share/help/pt/evolution/google-services.page
+/usr/share/help/pt/evolution/import-apps-kmail.page
+/usr/share/help/pt/evolution/import-apps-mozilla.page
+/usr/share/help/pt/evolution/import-apps-outlook.page
+/usr/share/help/pt/evolution/import-data.page
+/usr/share/help/pt/evolution/import-single-files.page
+/usr/share/help/pt/evolution/import-supported-file-formats.page
+/usr/share/help/pt/evolution/index.page
+/usr/share/help/pt/evolution/intro-first-run.page
+/usr/share/help/pt/evolution/intro-keyboard-shortcuts.page
+/usr/share/help/pt/evolution/intro-main-window.page
+/usr/share/help/pt/evolution/legal.xml
+/usr/share/help/pt/evolution/mail-access-gmail-imap-account.page
+/usr/share/help/pt/evolution/mail-access-gmail-pop-account.page
+/usr/share/help/pt/evolution/mail-account-manage-imap-plus.page
+/usr/share/help/pt/evolution/mail-account-manage-local-delivery.page
+/usr/share/help/pt/evolution/mail-account-manage-maildir-format-directories.page
+/usr/share/help/pt/evolution/mail-account-manage-mh-format-directories.page
+/usr/share/help/pt/evolution/mail-account-manage-microsoft-exchange-evo-ews.page
+/usr/share/help/pt/evolution/mail-account-manage-microsoft-exchange-evo-mapi.page
+/usr/share/help/pt/evolution/mail-account-manage-microsoft-exchange.page
+/usr/share/help/pt/evolution/mail-account-manage-pop.page
+/usr/share/help/pt/evolution/mail-account-manage-unix-mbox-spool-directory.page
+/usr/share/help/pt/evolution/mail-account-manage-unix-mbox-spool-file.page
+/usr/share/help/pt/evolution/mail-account-manage-usenet-news.page
+/usr/share/help/pt/evolution/mail-account-management.page
+/usr/share/help/pt/evolution/mail-attachments-received.page
+/usr/share/help/pt/evolution/mail-attachments-sending.page
+/usr/share/help/pt/evolution/mail-attachments.page
+/usr/share/help/pt/evolution/mail-calendar-sending-invitations.page
+/usr/share/help/pt/evolution/mail-cannot-see.page
+/usr/share/help/pt/evolution/mail-change-columns-in-message-list.page
+/usr/share/help/pt/evolution/mail-change-time-format.page
+/usr/share/help/pt/evolution/mail-composer-change-quotation-string.page
+/usr/share/help/pt/evolution/mail-composer-custom-header-lines.page
+/usr/share/help/pt/evolution/mail-composer-enable-html-format.page
+/usr/share/help/pt/evolution/mail-composer-external-editor.page
+/usr/share/help/pt/evolution/mail-composer-forward-as-attachment.page
+/usr/share/help/pt/evolution/mail-composer-forward.page
+/usr/share/help/pt/evolution/mail-composer-from-field-override.page
+/usr/share/help/pt/evolution/mail-composer-html-image.page
+/usr/share/help/pt/evolution/mail-composer-html-link.page
+/usr/share/help/pt/evolution/mail-composer-html-rule.page
+/usr/share/help/pt/evolution/mail-composer-html-table.page
+/usr/share/help/pt/evolution/mail-composer-html-text.page
+/usr/share/help/pt/evolution/mail-composer-html.page
+/usr/share/help/pt/evolution/mail-composer-mail-signatures-manage.page
+/usr/share/help/pt/evolution/mail-composer-mail-signatures-per-account.page
+/usr/share/help/pt/evolution/mail-composer-mail-signatures.page
+/usr/share/help/pt/evolution/mail-composer-message-templates-reply.page
+/usr/share/help/pt/evolution/mail-composer-message-templates-save.page
+/usr/share/help/pt/evolution/mail-composer-message-templates-variables.page
+/usr/share/help/pt/evolution/mail-composer-message-templates.page
+/usr/share/help/pt/evolution/mail-composer-plain-text.page
+/usr/share/help/pt/evolution/mail-composer-priority.page
+/usr/share/help/pt/evolution/mail-composer-reply.page
+/usr/share/help/pt/evolution/mail-composer-search.page
+/usr/share/help/pt/evolution/mail-composer-send-account-overrides.page
+/usr/share/help/pt/evolution/mail-composer-several-recipients.page
+/usr/share/help/pt/evolution/mail-composer-spellcheck.page
+/usr/share/help/pt/evolution/mail-composer-write-new-message.page
+/usr/share/help/pt/evolution/mail-default-CC-and-BCC.page
+/usr/share/help/pt/evolution/mail-default-folder-locations.page
+/usr/share/help/pt/evolution/mail-delete-and-undelete.page
+/usr/share/help/pt/evolution/mail-display-message-source.page
+/usr/share/help/pt/evolution/mail-displaying-character-encodings.page
+/usr/share/help/pt/evolution/mail-displaying-collapsible-headers.page
+/usr/share/help/pt/evolution/mail-displaying-images-in-html.page
+/usr/share/help/pt/evolution/mail-displaying-message.page
+/usr/share/help/pt/evolution/mail-displaying-sender-photograph.page
+/usr/share/help/pt/evolution/mail-duplicates.page
+/usr/share/help/pt/evolution/mail-encryption-gpg-create-key.page
+/usr/share/help/pt/evolution/mail-encryption-gpg-decrypting.page
+/usr/share/help/pt/evolution/mail-encryption-gpg-getting-keys.page
+/usr/share/help/pt/evolution/mail-encryption-gpg-set-up.page
+/usr/share/help/pt/evolution/mail-encryption-gpg-signing-encrypting.page
+/usr/share/help/pt/evolution/mail-encryption-s-mime-manage.page
+/usr/share/help/pt/evolution/mail-encryption-s-mime-signing-encrypting.page
+/usr/share/help/pt/evolution/mail-encryption.page
+/usr/share/help/pt/evolution/mail-filters-actions.page
+/usr/share/help/pt/evolution/mail-filters-conditions.page
+/usr/share/help/pt/evolution/mail-filters-not-working.page
+/usr/share/help/pt/evolution/mail-filters.page
+/usr/share/help/pt/evolution/mail-folders.page
+/usr/share/help/pt/evolution/mail-follow-up-flag.page
+/usr/share/help/pt/evolution/mail-imap-change-send-method.page
+/usr/share/help/pt/evolution/mail-imap-subscriptions.page
+/usr/share/help/pt/evolution/mail-labels.page
+/usr/share/help/pt/evolution/mail-layout-changing.page
+/usr/share/help/pt/evolution/mail-localized-re-subjects.page
+/usr/share/help/pt/evolution/mail-moving-emails.page
+/usr/share/help/pt/evolution/mail-not-sent.page
+/usr/share/help/pt/evolution/mail-organizing.page
+/usr/share/help/pt/evolution/mail-read-receipts.page
+/usr/share/help/pt/evolution/mail-received-notification.page
+/usr/share/help/pt/evolution/mail-receiving-options-exchange-ews.page
+/usr/share/help/pt/evolution/mail-receiving-options-exchange-mapi.page
+/usr/share/help/pt/evolution/mail-receiving-options-imap-plus.page
+/usr/share/help/pt/evolution/mail-receiving-options-local-delivery.page
+/usr/share/help/pt/evolution/mail-receiving-options-maildir-format-directories.page
+/usr/share/help/pt/evolution/mail-receiving-options-mh-format-directories.page
+/usr/share/help/pt/evolution/mail-receiving-options-pop.page
+/usr/share/help/pt/evolution/mail-receiving-options-unix-mbox-spool-directory.page
+/usr/share/help/pt/evolution/mail-receiving-options-unix-mbox-spool-file.page
+/usr/share/help/pt/evolution/mail-receiving-options-usenet-news.page
+/usr/share/help/pt/evolution/mail-receiving-options.page
+/usr/share/help/pt/evolution/mail-refresh-folders.page
+/usr/share/help/pt/evolution/mail-save-as-pdf.page
+/usr/share/help/pt/evolution/mail-search-folders-add.page
+/usr/share/help/pt/evolution/mail-search-folders-conditions.page
+/usr/share/help/pt/evolution/mail-search-folders.page
+/usr/share/help/pt/evolution/mail-searching-attachment-type.page
+/usr/share/help/pt/evolution/mail-searching.page
+/usr/share/help/pt/evolution/mail-send-and-receive-automatically.page
+/usr/share/help/pt/evolution/mail-send-and-receive-manual.page
+/usr/share/help/pt/evolution/mail-send-and-receive.page
+/usr/share/help/pt/evolution/mail-sending-options-smtp.page
+/usr/share/help/pt/evolution/mail-several-pop-accounts.page
+/usr/share/help/pt/evolution/mail-sorting-folder-list.page
+/usr/share/help/pt/evolution/mail-sorting-message-list.page
+/usr/share/help/pt/evolution/mail-spam-marking.page
+/usr/share/help/pt/evolution/mail-spam-settings.page
+/usr/share/help/pt/evolution/mail-spam.page
+/usr/share/help/pt/evolution/mail-two-trash-folders.page
+/usr/share/help/pt/evolution/mail-usenet-subscriptions.page
+/usr/share/help/pt/evolution/mail-vertical-view.page
+/usr/share/help/pt/evolution/mail-word-wrap.page
+/usr/share/help/pt/evolution/mail-working-offline.page
+/usr/share/help/pt/evolution/memos-searching.page
+/usr/share/help/pt/evolution/memos-usage-add-memo.page
+/usr/share/help/pt/evolution/memos-usage-delete-memo.page
+/usr/share/help/pt/evolution/memos-usage-edit-memo.page
+/usr/share/help/pt/evolution/memos-usage.page
+/usr/share/help/pt/evolution/offline.page
+/usr/share/help/pt/evolution/organizing.page
+/usr/share/help/pt/evolution/problems-debug-how-to.page
+/usr/share/help/pt/evolution/problems-getting-help.page
+/usr/share/help/pt/evolution/problems-reporting-bugs.page
+/usr/share/help/pt/evolution/searching-items.page
+/usr/share/help/pt/evolution/start-command-line-parameters.page
+/usr/share/help/pt/evolution/sync-with-other-devices.page
+/usr/share/help/pt/evolution/tasks-caldav.page
+/usr/share/help/pt/evolution/tasks-display-settings.page
+/usr/share/help/pt/evolution/tasks-local.page
+/usr/share/help/pt/evolution/tasks-organizing.page
+/usr/share/help/pt/evolution/tasks-searching.page
+/usr/share/help/pt/evolution/tasks-usage-add-task.page
+/usr/share/help/pt/evolution/tasks-usage-delete-task.page
+/usr/share/help/pt/evolution/tasks-usage-edit-task.page
+/usr/share/help/pt/evolution/tasks-usage.page
+/usr/share/help/pt/evolution/tasks-using-several-tasklists.page
+/usr/share/help/pt/evolution/tasks-webdav.page
+/usr/share/help/pt/evolution/using-categories.page
+/usr/share/help/pt/evolution/xinclude-filter-vfolder-conditions.xml
+/usr/share/help/pt/evolution/xinclude-searching.xml
 /usr/share/help/pt_BR/evolution/backup-restore.page
 /usr/share/help/pt_BR/evolution/calendar-alarms-and-reminders.page
 /usr/share/help/pt_BR/evolution/calendar-caldav.page
