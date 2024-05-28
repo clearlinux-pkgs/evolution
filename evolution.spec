@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : evolution
-Version  : 3.52.1
-Release  : 122
-URL      : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz
-Source0  : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz
+Version  : 3.52.2
+Release  : 123
+URL      : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.2.tar.xz
+Source0  : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.2.tar.xz
 Summary  : Calendar utilities for Evolution
 Group    : Development/Tools
 License  : CC-BY-SA-3.0 GFDL-1.3 LGPL-2.1 LGPL-3.0 OLDAP-2.8
@@ -163,15 +163,15 @@ man components for the evolution package.
 
 
 %prep
-%setup -q -n evolution-3.52.1
-cd %{_builddir}/evolution-3.52.1
+%setup -q -n evolution-3.52.2
+cd %{_builddir}/evolution-3.52.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713537445
+export SOURCE_DATE_EPOCH=1716859063
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -244,7 +244,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713537445
+export SOURCE_DATE_EPOCH=1716859063
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution
 cp %{_builddir}/evolution-%{version}/COPYING-DOCS.CCBYSA %{buildroot}/usr/share/package-licenses/evolution/981f80d8daa1dc8bff466b65c9b6bfbb3723ccaa || :
