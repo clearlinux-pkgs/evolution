@@ -10,3 +10,5 @@ nss-dev
 openldap-dev
 perl(XML::Parser)
 psmisc
+gspell-dev
+cmark-dev
