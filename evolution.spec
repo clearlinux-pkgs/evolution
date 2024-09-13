@@ -7,7 +7,7 @@
 #
 Name     : evolution
 Version  : 3.52.4
-Release  : 129
+Release  : 130
 URL      : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.4.tar.xz
 Source0  : https://download.gnome.org/sources/evolution/3.52/evolution-3.52.4.tar.xz
 Summary  : Calendar utilities for Evolution
