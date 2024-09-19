@@ -1,78 +1,166 @@
-Evolution 3.52.4 2024-08-02
+Evolution 3.54.0 2024-09-13
 ---------------------------
 
 Bug Fixes:
-	I#2529 - Tooltips in Month view not always shown
-	I#2794 - Mail: Print to File keeps previous file name
-	I#2795 - Tooltips only sometimes displayed in Task and Memos Pane
+	I#2840 - Calendar: Correct typos "Sent Notice" -> "Send Notice"
+	I#2845 - Typo in code eab-contact
+	I#2846 - Calendar: Correct typo in error message id
+	M!137 - Set prgname to application ID (Balló György)
 
 Miscellaneous:
-	EWebView: Just loaded remote images may be left invisible
+	docs: Correct developer documentation to install API indexes
+	CI: Export also developer documentation into the web pages
 
 Translations:
-	Boyuan Yang (zh_CN)
+	Alan Mortensen (da)
+	Anders Jonsson (sv)
+	Balázs Úr (hu)
+	Emin Tufan Çetin (tr)
+	Jürgen Benvenuti (de)
+	Martin (sl)
+	Sabri Ünal (tr)
+	Yuri Chornoivan (uk)
 
-Evolution 3.52.3 2024-06-28
+Evolution 3.53.3 2024-08-30
 ---------------------------
 
 Bug Fixes:
+	I#2818 - Permit only one instance of “Evolution Accounts” window
+	I#2823 - Translations of the concepts "email" and "raw email" are difficult for users
+	I#2824 - Mail: junk-test not called since I#2780
+	I#2838 - Translations in WebExtension do not work
+	M!136 - Calendar: Fix gettext format problems (Anders Jonsson)
+
+Miscellaneous:
+	help: Open the latest help web pages when help not available locally
+
+Translations:
+	Asier Sarasua Garmendia (eu)
+	Balázs Úr (hu)
+	Boyuan Yang (zh_CN)
+	Bruce Cowan (en_GB)
+	Ekaterine Papava (ka)
+	Haolin Xue (zh_CN)
+	Martin (sl)
+	Sabri Ünal (tr)
+	Yuri Chornoivan (uk)
+
+Evolution 3.53.2 2024-08-02
+---------------------------
+
+Bug Fixes:
+	I#1866 - Ability to identify which domain a blocked remote image is related to
+	I#1909 - Support custom icon and text color also for Search Folders
+	I#1940 - Remove multiple CC warning if they are sharing common domain
+	I#2292 - Allow internal anchor links in HTML mail composer
+	I#2529 - Tooltips in Month view not always shown
+	I#2780 - Enhance "junk-test" to return also "inconclusive" value
+	I#2790 - "Thread by Subject" option not propagated to Search Folders
+	I#2794 - Mail: Print to File keeps previous file name
+	I#2795 - Tooltips only sometimes displayed in Task and Memos Pane
+	I#2797 - Outgoing filter: Source account condition never succeeds
+	I#2798 - MessageList: Parents of collapsed threads do not show labels properly
+	I#2799 - itip-formatter: Use open-map: link for the Location field
+	I#2805 - Mark for Follow Up dialog ignores date format setting
+	I#2808 - publish-calendar: Fails to mount destination directory
+
+Miscellaneous:
+	CI: Update OpenLDAP version
+	CI: Update dependencies in the Flatpak manifest
+	CI: Add language switcher into the generated help/ pages
+	flaptak: Update dependencies in the build strict for the development version
+	EWebView: Just loaded remote images may be left invisible
+	EToDoPane: Robust open of a calendar client
+	Calendar: Correct indent of some options in the Preferences
+	help: Mention the Switcher buttons appearance can be changed in the menu
+
+Translations:
+	Anders Jonsson (sv)
+	Boyuan Yang (zh_CN)
+	Daniel Șerbănescu (ro)
+	Ekaterine Papava (ka)
+	Jürgen Benvenuti (de)
+	Martin (sl)
+	Yuri Chornoivan (uk)
+
+Evolution 3.53.1 2024-06-28
+---------------------------
+
+Bug Fixes:
+	I#1997 - Evolution imports some .eml files incorrectly
+	I#2006 - Calendar: Changing start date does not offer saving immediately
+	I#2230 - Configurable timeout for WebDAV sources
+	I#2266 - Ability to use a different Markdown-to-HTML converter
 	I#2273 - Speed up startup - lots of local folders
+	I#2276 - "Edit as new message" fails for encrypted mails
+	I#2283 - Calendar: Add option to disable drag&drop of the events
+	I#2287 - Paste screenshot from clipboard in Mail composer
+	I#2308 - Language for replies and forwards is not respected by "Inline (Outlook style)" reply style
 	I#2365 - Composer: Wrap search by default
+	I#2371 - Composer: Added extra quotation level after draft open ][
+	I#2384 - Mail: Show inline images with 'name' as attachments
+	I#2404 - Calendar: Hide well-known read-only source from import dialog
 	I#2411 - Composer: Text out of <div> can break Undo
+	I#2449 - Calendar: Remember "Send my reminders with this event" value
+	I#2617 - Wrong weeks in Month view when returning from different page of dates
+	I#2660 - Ability to duplicate a mail filtering rule to create a new one
+	I#2669 - Wrong error message on restoring backup when 'tar' is absent
+	I#2674 - Add option to attach multiple messages as separate files
+	I#2683 - Open mbox files instead of import
+	I#2687 - Calendar: Allow entering cancellation reason on meeting deletion
+	I#2693 - Mail: Prefer saving original message instead of re-encode
+	I#2696 - Mail: Add possibility to add multiple Labels at once
+	I#2697 - Add option to set folder to restore Not-Junk messages to
+	I#2698 - ESourceSelector: Emit source-select/unselect on source change
+	I#2707 - Calendar: Fails to open event from alarm-notify on app start
+	I#2709 - Possible crash when exiting application
+	I#2710 - EHeaderBar: Report correct minimum width
+	I#2711 - Subject line in message pane not bold anymore in Wide view
+	I#2712 - Crash when hiding completed tasks
+	I#2720 - Correct service detection by domain name (Peter Simonyi)
+	I#2722 - EMailBrowser: Hide Print preview menu option
+	I#2739 - Mail: Remember Page Setup settings when printing
+	I#2744 - Shell: Enhance symbolic icons usage detection
+	I#2749 - Crash when recovering mail from the previous session
+	I#2751 - Open last view when restarting Evolution
+	I#2753 - SignatureEditor: Format change can discard signature text
+	I#2754 - SignatureEditor: Let gtk+ decide default window width
 	I#2758 - Forwarded e-mails don't have a filename extension
 	I#2761 - Composer: Crash when opening spellcheck dialog
 	I#2773 - Unable to drag'n'drop attachments between attachment bars
 	I#2778 - Crash under gtk_clutter_init_internal()
 
 Miscellaneous:
-	Misc: Replace XPM images with SVG images
-	EAttachment: Check file_info contains display-name before accessing it
-	CI: Workaround broken git clone for libcanberra
-
-Translations:
-	Aurimas Černius (lt)
-	Martin (sl)
-
-Evolution 3.52.2 2024-05-24
----------------------------
-
-Bug Fixes:
-	I#2371 - Composer: Added extra quotation level after draft open ][
-	I#2707 - Calendar: Fails to open event from alarm-notify on app start
-	I#2709 - Possible crash when exiting application
-	I#2739 - Mail: Remember Page Setup settings when printing
-	I#2744 - Shell: Enhance symbolic icons usage detection
-	I#2749 - Crash when recovering mail from the previous session
-	I#2751 - Open last view when restarting Evolution
-	I#2753 - SignatureEditor: Format change can discard signature text
-
-Miscellaneous:
+	data: Fix circular-component-relation in .appdata file
+	org.gnome.evolution.mail.gschema.xml: Fix a typo in a translatable string
 	e-mail-request: Fix a memory leak
 	shell: Closing last window does not always run "prepare-for-quit"
+	EShellWindow: Remove unused private variable
+	Misc: Replace XPM images with SVG images
+	e-task-table: Store deletion reason into COMMENT property
+	docs: Fix a 404 API reference docs URI (Andre Klapper)
 	Update online_help_url URI (Andre Klapper)
+	Appdata: Link to GitLab Issues instead of New Issue URL (Andre Klapper)
+	EAttachment: Check file_info contains display-name before accessing it
+	CI: Workaround broken git clone for libcanberra
+	help: Link to GitLab Issues instead of New Issue URL (Andre Klapper)
 
 Translations:
+	Anders Jonsson (sv)
+	Andika Triwidada (id)
+	Athmane MOKRAOUI (kab)
+	Aurimas Černius (lt)
+	Boyuan Yang (zh_CN)
+	Ekaterine Papava (ka)
+	Fabio Tomat (fur)
 	Jordi Mas i Hernandez (ca)
-
-Evolution 3.52.1 2024-04-19
----------------------------
-
-Bug Fixes:
-	I#2617 - Wrong weeks in Month view when returning from different page of dates
-	I#2693 - Mail: Prefer saving original message instead of re-encode
-	I#2710 - EHeaderBar: Report correct minimum width
-	I#2711 - Subject line in message pane not bold anymore in Wide view
-	I#2712 - Crash when hiding completed tasks
-	I#2722 - EMailBrowser: Hide Print preview menu option
-
-Miscellaneous:
-	data: Fix circular-component-relation in .appdata file
-
-Translations:
 	Martin (sl)
 	Милош Поповић (sr)
 	Милош Поповић (sr@latin)
+	Olga Smirnova (ie)
 	Piotr Drąg (pl)
+	Sabri Ünal (tr)
+	Yuri Chornoivan (uk)
 
 Evolution 3.52.0 2024-03-15
 ---------------------------
