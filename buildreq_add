@@ -12,3 +12,4 @@ perl(XML::Parser)
 psmisc
 gspell-dev
 cmark-dev
+libxml2-python3
