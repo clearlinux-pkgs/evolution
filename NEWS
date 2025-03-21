@@ -1,42 +1,196 @@
-Evolution 3.54.3 2025-01-03
----------------------------
-
-Miscellaneous:
-	ESourceSelector: Source child drawn in too thin font
-
-Evolution 3.54.2 2024-11-22
+Evolution 3.56.0 2025-03-14
 ---------------------------
 
 Bug Fixes:
-	I#2886 - Composer: Possible crash on paste
-	I#2897 - Correct certificate key usage constants
-	I#2902 - ToDo bar sometimes does not display due tasks
+	I#2947 - Workaround shown menu icons when should not be
+	I#2989 - Crash on quit of the app
+	I#2991 - mail: Add .mbox extension to dragged email files (Ahmed Fatthi)
+	I#2998 - Tasks: Compare DUE date in local time zone, not the property's zone
+	I#3001 - ECalShellView: Add a translator comment for an ambiguous string
+	I#3002 - Forwarding from Unified Inbox picks wrong From account
+	I#3003 - Task bar in Calendar view is not sufficiently updated
+	I#3004 - Month View: Sometimes not fully populated
+	I#3006 - Mark Folder as read works not longer on subfolders
 
 Miscellaneous:
+	EWeekView: Scroll by shown weeks when scrolling by month
+	templates: Fix a circular dependency between structures
+	e-mail-shell-view-actions: Fix a memory leak
+	prefer-plain: Fix a ref/unref imbalance on an EUIActionGroup object
+
+Translations:
+	Anders Jonsson (sv)
+	Álvaro Burns (pt_BR)
+	Balázs Úr (hu)
+	Jean-Marc Tissières (fr)
+	Jordi Mas (ca)
+	Piotr Drąg (pl)
+	Sabri Ünal (tr)
+
+Evolution 3.55.3 2025-02-28
+---------------------------
+
+Bug Fixes:
+	I#2970 - EImportAssistant: Keep the preview widget expanded (Corentin Noël)
+	I#2971 - Add option to use bigger text for time in the "To Do" pane
+	I#2973 - itip-formatter: State status of found appointment in email
+	I#2975 - MessageList: Use GTask instead of RegenData to keep track of current task (Corentin Noël)
+	I#2984 - EMailLabelTreeView: Label colors not shown with symbolic icons
+	I#2986 - Switcher appearance resets to "Icons and Text" after restart
+	I#2992 - Entering number in search bar colours selected message
+	I#2993 - Composer: Middle-click paste misplaced with changed font scaling
+	I#2996 - ETree: Expander triangle is reversed
+	M!179 - Use GdkDisplay instead of GdkScreen when possible (Corentin Noël)
+	M!188 - EUIManager: Do not do direct comparison with GVariantType (Corentin Noël)
+	M!189 - e-util: Remove GalA11yETableFactory and GalA11yETreeFactory (Corentin Noël)
+
+Miscellaneous:
+	EWebKitEditor: Correct GObject property type on read
+	text-highlight: Update 'highlight' arguments
+	Composer: Do not add extra empty lines at the end of the plain text
+	help: Add missing help files into the build script
+
+Translations:
+	Ekaterine Papava (ka)
+	Jiri Eischmann (cs)
+	Martin (sl)
+	Vincent Chatelain (fr)
+	Yuri Chornoivan (uk)
+
+Evolution 3.55.2 2025-01-31
+---------------------------
+
+Bug Fixes:
+	I#2384 - Mail: Show inline images with 'name' as attachments
+	I#2829 - Apply changes in attachment properties popover with Enter (Vishruth-Thimmaiah)
+	I#2926 - Change default button in delete confirmation dialog
+	I#2932 - S/MIME: Backup certificate with stronger/better algorithm
+	I#2938 - Expose the "Bulk Edit..." in the contextual menu
+	I#2941 - mail-autoconfig: Use real user e-mail in the request
+	I#2943 - ETableSortInfo: Have a strong reference on the ETableSpecification
+	I#2948 - Mail: "To Do" bar is always shown after restart
+	I#2952 - Mail: Allow save of a message attachment to a mail folder
+	M!153 - mail-dialogs: Use GtkGrid instead of GtkTable (Corentin Noël)
+	M!155 - canvas: Actually subclass GInitiallyUnowned (Corentin Noël)
+	M!156 - libgnomecanvas: Remove gnome-canvas-i18n.h (Corentin Noël)
+	M!157 - Replace all occurences of gtk_icon_info_free (Corentin Noël)
+	M!158 - EMeetingTimeSelector: Subclass GtkGrid (Corentin Noël)
+	M!158 - EMeetingTimeSelector: Use a GtkGrid for the time selector (Corentin Noël)
+	M!159 - EComposerHeaderTable: Make it a GtkGrid subclass (Corentin Noël)
+	M!159 - EContactEditor: Use GtkGrid instead of GtkTable (Corentin Noël)
+	M!159 - EContactQuickAdd: Use GtkGrid instead of GtkTable (Corentin Noël)
+	M!161 - Remove ESendOptionsDialog (Corentin Noël)
+	M!162 - ETableConfig: Use GtkComboboxText directly (Corentin Noël)
+	M!163 - Use GtkGrid instead of GtkTable (Corentin Noël)
+	M!164 - Require GLib 2.70 (Corentin Noël)
+	M!165 - Get rid of GtkAlignment in the code (Corentin Noël)
+	M!166 - EAlphabetBox: Base the widget on GtkListBox (Corentin Noël)
+	M!167 - Replace GtkArrow with images (Corentin Noël)
+	M!169 - Remove e_util_check_gtk_bindings_in_key_press_event_cb (Corentin Noël)
+	M!170 - Remove the use of gtk_scrolled_window_add_with_viewport (Corentin Noël)
+	M!172 - EWeekdayChooser: Switch to native GTK widgets (Corentin Noël)
+	M!173 - Replace g_memdup with g_memdup2 (Corentin Noël)
+	M!174 - Do not use GTimeVal (Corentin Noël)
+	M!175 - Avoid the use of g_binding_get_source/target (Corentin Noël)
+	M!176 - Replace gtk_combo_box_set_focus_on_click with gtk_widget_set_focus_on_click (Corentin Noël)
+	M!178 - Use webkit_settings_font_size_to_pixels to set font size (Corentin Noël)
+	M!181 - Remove calendar/gui/misc.c|.h (Corentin Noël)
+	ews-I#295 - itip-formatter: Import of forwarded meeting as bare event
+
+Miscellaneous:
+	ETaskTable: Use "stock_check-filled-symbolic" icon name
+	EAddressbookView: Context menu could be shown twice in the Minicard view
+	Switcher button icon does not change when action's icon name changes
+	EShellView: Do not process accels when search entry is focused
+	Preview layout setting does not stick after app restart
+	Remove e-reflow and e-reflow-model (Corentin Noël)
+	EAttachmentBar: Verify 'possible_attachments" is non-NULL before using it
+	Replace  margin-left/right with margin-start/end (Corentin Noël)
+	e-misc-utils: Remove unused e_util_stop_signal_emission_cb()
+	Use gtk_show_uri_on_window instead of gtk_show_uri (Corentin Noël)
+	EShellSwitcher: Cannot create a new window by a switcher button press
+	docs: Remove index references for versions not in the code any more
+
+Translations:
+	Anders Jonsson (sv)
+	Boyuan Yang (zh_CN)
+	Ekaterine Papava (ka)
+	Martin (sl)
+	Quentin PAGÈS (oc)
+	Yuri Chornoivan (uk)
+
+Evolution 3.55.1 2025-01-03
+---------------------------
+
+* Evolution replaced deprecated GtkUIManager with its own EUIManager and related
+  structures. Some API changed too. Plugins/modules should be ported accordingly.
+
+Bug Fixes:
+	I#2803 - Mail: Add a 'Correspondents' column to the message list
+	I#2834 - Account Editor: Disable Refresh button for disabled accounts (Дилян Палаузов)
+	I#2843 - ToDo bar meeting deletion differs from Calendar view
+	I#2856 - publish-calendar: Settings UI does not resize with window
+	I#2878 - Missing sender's S/MIME certificate import button
+	I#2882 - shell: Increase default window size to 1440x900 (Jordan Petridis)
+	I#2886 - Composer: Possible crash on paste
+	I#2890 - icons: stock_check-filled is dark in the dark theme
+	I#2891 - Calendar: Current view menu not always updated
+	I#2892 - e-html-editor: Check EColorCombo::default-color before using it
+	I#2893 - prefer-plain: Reword plugin description (Дилян Палаузов)
+	I#2895 - "Matches" needs clarification
+	I#2897 - Correct certificate key usage constants
+	I#2902 - ToDo bar sometimes does not display due tasks
+	I#2905 - Autocrypt header uses wrong email address
+	I#2907 - Ctrl+C does not Copy from the Mail preview
+	I#2910 - Display absolute account quota usage / total
+	M!138 - help: Mention Collection accounts, RSS feeds, the Evolution Accounts (Дилян Палаузов)
+	M!141 - message-list: Access RegenData from GTask task_data (Corentin Noël)
+	M!143 - cal-config-caldav: request checks for DAV:calendar-auto-schedule (Дилян Палаузов)
+	M!144 - ECalSourceConfig: Read-only calendars cannot be default (Дилян Палаузов)
+	M!147 - Set project-wide emacs formatting rules (Дилян Палаузов)
+	M!148 - help: Add CardDAV address book documentation (Дилян Палаузов)
+	M!151 - e-datetime-format: Port from GtkTable to GtkGrid (Corentin Noël)
+	M!152 - Allow customization of the menus, toolbars and shortcuts in the GUI
+	eds-I#570 - Adapt to libical icalrecurrencetype changes
+
+Miscellaneous:
+	HTMLEditorLinkPopover: Change button label to not clash on mnemonic
+	build: Update CMake uninstall file
+	libgnomecanvas: Add few checks for argument validity
+	Port to GTask from GSimpleAsyncResult (Corentin Noël)
+	WebKitGTK 2.46.1: Middle mouse button inserts primary clipboard twice
+	iconv-detect: Fix a memory leak detected by Coverity Scan
+	e-cell-size.c: typo (Дилян Палаузов)
+	webkit-editor: Middle mouse button double-click pastes text twice
+	Guard most of the g_file_info_get_...() calls with checks for attribute existence
 	Default inbox email: Update URIs, remove link to defunct mailing list (Andre Klapper)
+	Mail: Fix 'Send/Receive' button on the toolbar/headerbar
+	strings: harmonize drag-and-drop spelling (Alexandre Franke)
+	e-color-combo: Correct GObject property get/set type for the 'palette' property
+	Sidebar is one word (Дилян Палаузов)
+	Replace GtkMisc with GtkLabel.x/yalign (Corentin Noël)
+	EActionComboBox: User change not always notified to the listeners
+	message-list: Avoid possible use of an uninitialized variable
+	ESourceSelector: Source child drawn in too thin font
+	mail-notification: Fix switch to the 'mail' view
+	help: Clarifications on Calendar Publishing (Дилян Палаузов)
+	help: Update wiki.gnome.org hyperlinks (Дилян Палаузов)
+	help: Sidebar is one word (Дилян Палаузов)
+	help: Update a Wikipedia URI anchor (Andre Klapper)
 
 Translations:
 	Alexandre Franke (fr)
 	Andika Triwidada (id)
 	Daniel Rusek (cs)
-	Juliano de Souza Camargo (pt_BR)
-	Милош Поповић (sr)
-	Милош Поповић (sr@latin)
-
-Evolution 3.54.1 2024-10-18
----------------------------
-
-Bug Fixes:
-	I#2878 - Missing sender's S/MIME certificate import button
-
-Miscellaneous:
-	libgnomecanvas: Add few checks for argument validity
-	WebKitGTK 2.46.1: Middle mouse button inserts primary clipboard twice
-
-Translations:
 	Ekaterine Papava (ka)
+	Jean-Marc Tissières (fr)
+	Juliano de Souza Camargo (pt_BR)
 	Jürgen Benvenuti (de)
+	Martin (sl)
+	Милош Поповић (sr)
 	Piotr Drąg (pl)
+	Robin Mehdee (bn)
+	Yuri Chornoivan (uk)
 
 Evolution 3.54.0 2024-09-13
 ---------------------------
